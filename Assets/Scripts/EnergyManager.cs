@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class EnergyManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float energyLevel;
     void Start()
     {
-        
+        energyLevel = 100f; // Initialize energy level to 100
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
