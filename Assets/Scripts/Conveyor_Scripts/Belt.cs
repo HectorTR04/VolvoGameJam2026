@@ -19,7 +19,7 @@ public class Belt : MonoBehaviour
     }
     public Vector3 GetItemPosition()
     {
-
+        return Vector3.zero;
     }
 
     private IEnumerator startBeltMove()
