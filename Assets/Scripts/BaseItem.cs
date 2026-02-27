@@ -7,6 +7,7 @@ public class BaseItem : MonoBehaviour
     bool discovered;
     Sprite sprite;
 
+    ItemRecipe recipe;
 }
 
 public struct ItemRecipe
