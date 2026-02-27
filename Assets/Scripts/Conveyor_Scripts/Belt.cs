@@ -15,20 +15,20 @@ public class Belt : MonoBehaviour
     {
         beltInSequence = null;
         beltInSequence = FindNextBelt();
-        gameObject.name = $"Belt: {beltID++;}"
+        gameObject.name = $"Belt: {beltID++}";
     }
     public Vector3 GetItemPosition()
     {
-
+        return Vector3.zero;
     }
 
     private IEnumerator startBeltMove()
     {
-
+        yield return new WaitForEndOfFrame();
     }
 
     private Belt FindNextBelt()
     {
-
+        return null;
     }
 }
