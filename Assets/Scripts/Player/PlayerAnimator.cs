@@ -42,7 +42,6 @@ public class PlayerAnimator : MonoBehaviour
 
     public void AnimateInteraction()
     {
-        Debug.Log("interacted");
         m_isInteracting = true;
         TransitionToNewState(new InteractState(m_animator));
     }

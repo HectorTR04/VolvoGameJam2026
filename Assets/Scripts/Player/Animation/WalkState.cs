@@ -10,7 +10,6 @@ public class WalkState : AnimationState
     {
         m_playerAnimator.SetBool("isWalking", true);
     }
-
     public override void Exit()
     {
         m_playerAnimator.SetBool("isWalking", false);
