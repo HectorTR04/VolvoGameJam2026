@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,43 +7,61 @@ public class IncineratorScript : MonoBehaviour
     [SerializeField]
     private ParticleSystem incineratorParticles;
     [SerializeField]
-    EnergyManager energyManager;
+    private EnergyManager energyManager;
+    [SerializeField]
+    private float drainPerSecond = 1f;
+    [SerializeField]
+    private float energyPerTrash = 10f;
     private bool isOn;
     void Update()
     {
-        if (isOn)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            energyManager.energyLevel -= Time.deltaTime * 1f; // Decrease energy level over time when incinerator is on
-            if (energyManager.energyLevel <= 0)
+            if (isOn)
             {
-                energyManager.energyLevel = 0;
                 TurnOffIncinerator();
             }
+            else
+            {
+                TurnOnIncinerator();
+            }
+        }
+
+        if (!isOn || energyManager == null)
+        {
+            return;
+        }
+        energyManager.energyLevel -= Time.deltaTime * drainPerSecond;
+        if (energyManager.energyLevel <= 0)
+        {
+            energyManager.energyLevel = 0f;
+            TurnOffIncinerator();
         }
         Debug.Log($"Energy Level: {energyManager.energyLevel}");
     }
     public void TurnOnIncinerator()
     {
-        if (!isOn)
-        {
-            incineratorParticles.Play();
-            isOn = true;
-        }
+        if (isOn || energyManager == null) return;
+        if (energyManager.energyLevel <= 0f) return; // optional: don't allow turning on at 0
+
+        if (incineratorParticles) incineratorParticles.Play();
+        isOn = true;
     }
     public void TurnOffIncinerator()
     {
-        if (isOn)
-        {
-            incineratorParticles.Stop();
-            isOn = false;
-        }
+        if (!isOn) return;
+
+        if (incineratorParticles) incineratorParticles.Stop();
+        isOn = false;
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Trash"))
+        if (!isOn || energyManager == null) return;
+
+        if (other.CompareTag("Trash"))
         {
             other.gameObject.SetActive(false);
-            energyManager.energyLevel += 10f; // Increase energy level when trash is incinerated
+            energyManager.energyLevel += energyPerTrash;
         }
     }
 
