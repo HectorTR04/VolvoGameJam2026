@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject item;
+    [SerializeField] 
+    public GameObject[] item;
     public Transform spawnPoint;
     public bool spawningItem = true;
     public float spawnTime;
@@ -38,7 +39,9 @@ public class Spawner : MonoBehaviour
         itemPool = new List<GameObject>();
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject newObject = Instantiate(item, spawnPoint.position, spawnPoint.rotation);
+            GameObject itemToInstantiate = item[Random.Range(0, item.Length)];
+
+            GameObject newObject = Instantiate(itemToInstantiate, spawnPoint.position, spawnPoint.rotation);
             newObject.transform.SetParent(transform);
             newObject.SetActive(false);
 
