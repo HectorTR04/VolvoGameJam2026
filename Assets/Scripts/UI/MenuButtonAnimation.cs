@@ -31,5 +31,4 @@ public class MenuButtonAnimation : MonoBehaviour
         m_buttonImg.sprite = m_defaultButtonSprite;
         m_buttonText.color = m_hoverColor;
     }
-
 }
