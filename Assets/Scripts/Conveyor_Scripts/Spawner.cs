@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner : MachineBase
 {
     [SerializeField] 
     public GameObject[] item;
@@ -11,15 +11,16 @@ public class Spawner : MonoBehaviour
     public bool spawningItem = true;
 
     // Maybe for energy stuff
-    public bool isOn  = true;
-    public float currentEnergy;
-    public float maxEnergy;
+    // public bool isOn  = true;
+    // public float currentEnergy;
+    // public float maxEnergy;
 
-    public float spawnTime;
+    public float spawnTime = 1f;
     public int poolSize = 100;
 
     private List<GameObject> itemPool;
     private int currentIndex = 0;
+        private Coroutine spawnRoutine;
 
     private void Awake()
     {
@@ -77,5 +78,19 @@ public class Spawner : MonoBehaviour
             currentIndex = 0;
         }
     }
+    protected override void OnTurnedOn()
+    {
+        if (spawnRoutine != null)
+        {
+            StopCoroutine(spawnRoutine);
+        }
+    }
+    protected override void OnTurnedOff()
+    {
+        if (spawnRoutine != null)
+        {
+            StopCoroutine(spawnRoutine);
+        }
 
+    }
 }

@@ -20,21 +20,6 @@ public class IncineratorScript : MachineBase
             }
         }
     }
-    // public void TurnOnIncinerator()
-    // {
-    //     if (isOn || energyManager == null) return;
-    //     if (energyManager.energyLevel <= 0f) return; // optional: don't allow turning on at 0
-
-    //     if (incineratorParticles) incineratorParticles.Play();
-    //     isOn = true;
-    // }
-    // public void TurnOffIncinerator()
-    // {
-    //     if (!isOn) return;
-
-    //     if (incineratorParticles) incineratorParticles.Stop();
-    //     isOn = false;
-    // }
     public void OnTriggerEnter(Collider other)
     {
         if (!isOn || energyManager == null) return;
