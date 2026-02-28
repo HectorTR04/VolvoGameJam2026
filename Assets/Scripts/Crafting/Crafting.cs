@@ -10,6 +10,15 @@ public class Crafting : MonoBehaviour
     public BaseItem[] baseItemInputs = new BaseItem[2];
 
     public void Awake()
+    {   
+        //CheckCraftingOutput();
+    }
+
+    public void Update()
+    {
+    }
+
+    public void CheckCraftingOutput()
     {
         for (int i = 0; i < inputs.Length; i++)
         {
@@ -17,18 +26,10 @@ public class Crafting : MonoBehaviour
             if (baseItemInputs[i] == null) Debug.Log("baseitem " + i);
             if (inputs[i] == null) Debug.Log("inputs " + i);
         }
-        CheckCraftingOutput(baseItemInputs);
-    }
 
-    public void Update()
-    {
-    }
-
-    public void CheckCraftingOutput(BaseItem[] inputItems)
-    {
-        foreach(BaseRecipe recipe in recipes)
+        foreach (BaseRecipe recipe in recipes)
         {
-            if(DoesRecipeExist(inputItems, recipe))
+            if(DoesRecipeExist(baseItemInputs, recipe))
             {
                 Debug.Log("recipe exists lol");
                 Craft(recipe);

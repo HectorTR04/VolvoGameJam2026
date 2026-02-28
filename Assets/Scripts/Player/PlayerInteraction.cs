@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     private Vector3 m_verticalOffset = new(0, 0.5f, 0);
+    [SerializeField]
     private GameObject m_heldItem;
     private readonly float m_interactionRange = 2f;
 
@@ -24,5 +25,16 @@ public class PlayerInteraction : MonoBehaviour
                 detectedInteraction.OnInteract();
             }
         }
+    }
+
+    public Item GetItem()
+    {
+        if(m_heldItem) return m_heldItem.GetComponent<Item>();
+        else return null;
+    }
+
+    public void GetRidOfItem()
+    {
+        m_heldItem = null;
     }
 }

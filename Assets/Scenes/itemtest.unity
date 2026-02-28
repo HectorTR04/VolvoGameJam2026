@@ -462,8 +462,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: adc66c6b0835e2d45bb0734b5d0b3796, type: 2}
   - {fileID: 11400000, guid: 3680411bbdcb8e740805f120ceb228ca, type: 2}
   inputs:
-  - {fileID: 1418807310}
-  - {fileID: 863850537}
+  - {fileID: 0}
+  - {fileID: 0}
   baseItemInputs:
   - {fileID: 0}
   - {fileID: 0}
@@ -491,16 +491,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1393139393}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be8f8f55c0d5544f8d7bee490f04874, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e82216c11bf8a84680cf8a1f14de106, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GasCrafting
-  recipes: []
-  inputs:
-  - {fileID: 0}
-  - {fileID: 0}
-  baseItemInputs:
-  - {fileID: 0}
-  - {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingTable
+  PlayerInteraction: {fileID: 1597257322}
+  Crafting: {fileID: 1393139394}
+  isInteracting: 0
 --- !u!1 &1418807309
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +542,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1597257321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1597257323}
+  - component: {fileID: 1597257322}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1597257322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597257321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ca0a5add3218f408e7ab756288b998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  m_heldItem: {fileID: 0}
+--- !u!4 &1597257323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597257321}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.41341, y: 3.46724, z: -6.54972}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -555,3 +596,4 @@ SceneRoots:
   - {fileID: 1393139395}
   - {fileID: 1418807311}
   - {fileID: 863850538}
+  - {fileID: 1597257323}
