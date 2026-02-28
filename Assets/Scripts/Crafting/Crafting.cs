@@ -6,11 +6,22 @@ using UnityEngine;
 public class Crafting : MonoBehaviour
 {
     public List<BaseRecipe> recipes;
-    public BaseItem[] inputs = new BaseItem[2];
+    public Item[] inputs = new Item[2];
+    public BaseItem[] baseItemInputs = new BaseItem[2];
+
+    public void Awake()
+    {
+        for (int i = 0; i < inputs.Length; i++)
+        {
+            baseItemInputs[i] = inputs[i].GetBase();
+            if (baseItemInputs[i] == null) Debug.Log("baseitem " + i);
+            if (inputs[i] == null) Debug.Log("inputs " + i);
+        }
+        CheckCraftingOutput(baseItemInputs);
+    }
 
     public void Update()
     {
-        CheckCraftingOutput(inputs);
     }
 
     public void CheckCraftingOutput(BaseItem[] inputItems)
@@ -20,7 +31,7 @@ public class Crafting : MonoBehaviour
             if(DoesRecipeExist(inputItems, recipe))
             {
                 Debug.Log("recipe exists lol");
-                Craft(inputItems, recipe);
+                Craft(recipe);
             }
         }
     }
@@ -58,14 +69,17 @@ public class Crafting : MonoBehaviour
         return true;
     }
 
-    public virtual void Craft(BaseItem[] inputItems, BaseRecipe recipe)
+    public virtual void Craft(BaseRecipe recipe)
     {
-        for(int i = 0; i < inputItems.Length; i++)
+        for(int i = 0; i < inputs.Length; i++)
         {
-            Destroy(inputItems[i]);
+            baseItemInputs[i] = null;
+            Destroy(inputs[i].gameObject);
+            inputs[i] = null;
         }
 
-        Item outputItem = new Item(recipe.outputItem);
+        Item outputItem = new Item();
+        outputItem.baseData = recipe.outputItem;
 
         //instantiate prefab with the crafted item
 

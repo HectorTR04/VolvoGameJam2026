@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GasCrafting : Crafting
 {
-    public override void Craft(BaseItem[] inputItems, BaseRecipe recipe)
+    public override void Craft(BaseRecipe recipe)
     {
         WaitForGas();
         Debug.Log(WaitForGas());

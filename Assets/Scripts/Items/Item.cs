@@ -3,12 +3,8 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     [SerializeField]
-    BaseItem baseData;
+    public BaseItem baseData;
 
-    public Item(BaseItem baseData)
-    {
-        this.baseData = baseData;
-    }
 
     void Start()
     {
@@ -19,4 +15,7 @@ public class Item : MonoBehaviour
     {
         
     }
+
+    public BaseItem GetBase()
+        { return baseData; }
 }
