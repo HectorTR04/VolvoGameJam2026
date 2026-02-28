@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
   m_xDistanceFromPlayer: 0
-  m_yDistanceFromPlayer: 6
-  m_zDistanceFromPlayer: -6
+  m_yDistanceFromPlayer: 4
+  m_zDistanceFromPlayer: -5
   m_xRotation: 35
   m_yRotation: 0
   m_zRotation: 0
