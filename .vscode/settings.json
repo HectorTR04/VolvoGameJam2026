@@ -67,5 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "VolvoGameJam2026.slnx"
+    "dotnet.defaultSolution": "VolvoGameJam2026.slnx",
+    "FSharp.suggestGitignore": false
 }
