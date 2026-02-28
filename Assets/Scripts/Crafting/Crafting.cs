@@ -58,7 +58,7 @@ public class Crafting : MonoBehaviour
         return true;
     }
 
-    public void Craft(BaseItem[] inputItems, BaseRecipe recipe)
+    public virtual void Craft(BaseItem[] inputItems, BaseRecipe recipe)
     {
         for(int i = 0; i < inputItems.Length; i++)
         {
