@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private PlayerActions.InteractionActions m_interactions;
     private PlayerMovement m_playerMovement;
     private PlayerAnimator m_playerAnimator;
+    private PlayerInteraction m_playerInteraction;
     private CharacterController m_characterController;
 
     public Camera PlayerCamera { get { return m_playerCam; } }
@@ -33,11 +34,13 @@ public class PlayerController : MonoBehaviour
         m_movementActions = m_actions.Movement;
         m_interactions = m_actions.Interaction;
         m_interactions.Interact.performed += ctx => m_playerAnimator.AnimateInteraction();
+        m_interactions.Interact.performed += ctx => m_playerInteraction.Interact();
     }
     private void Start()
     {
         m_playerMovement = GetComponent<PlayerMovement>();
         m_playerAnimator = GetComponent<PlayerAnimator>();
+        m_playerInteraction = GetComponent<PlayerInteraction>();
         m_characterController = GetComponent<CharacterController>();
     }
     private void Update()

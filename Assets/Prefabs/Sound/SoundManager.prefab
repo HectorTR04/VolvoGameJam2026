@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8949925186140803561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7476727148499935022}
+  - component: {fileID: 3502471687920691538}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7476727148499935022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8949925186140803561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.81643, y: 0.025, z: 27.24176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3502471687920691538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8949925186140803561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0061480260934734d82e978937193a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.AudioSystem.SoundManager
+  soundDatabase: {fileID: 11400000, guid: 535132f59b051ea448f773971aa04efd, type: 2}
+  audioMixer: {fileID: 24100000, guid: 59ceadefff6a74347a6ee70619f03840, type: 2}
+  masterVolumeParam: Master
+  musicVolumeParam: Music
+  sfxVolumeParam: SFX
+  initialSfxSources: 8
+  maxSfxSources: 16
+  defaultSfxGroup: {fileID: 8096615365271032106, guid: 59ceadefff6a74347a6ee70619f03840, type: 2}
+  uiAudioSource: {fileID: 0}
+  uiMixerGroup: {fileID: -6525923657663771994, guid: 59ceadefff6a74347a6ee70619f03840, type: 2}
+  musicSource: {fileID: 0}
+  musicMixerGroup: {fileID: -2869574354627638613, guid: 59ceadefff6a74347a6ee70619f03840, type: 2}
+  defaultMusicVolume: 1
