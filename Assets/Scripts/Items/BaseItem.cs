@@ -1,12 +1,22 @@
 using System;
 using UnityEngine;
 
-public class BaseItem : MonoBehaviour
+[CreateAssetMenu(fileName = "Item", menuName = "ScriptableObjects/Item", order = 1)]
+public class BaseItem : ScriptableObject
 {
-    protected string itemName;
-    protected float energyValue;
-    protected bool discovered;
-    protected Sprite sprite;
+    public string itemName;
+    public float energyValue;
+    public bool discovered;
+    public Sprite sprite;
+    public ItemType type;
 }
 
-
+public enum ItemType
+{
+    None,
+    Water,
+    Fire,
+    Earth,
+    Air,
+    Steam
+}
