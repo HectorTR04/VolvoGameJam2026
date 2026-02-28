@@ -414,9 +414,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crafting
   recipes:
   - {fileID: 11400000, guid: adc66c6b0835e2d45bb0734b5d0b3796, type: 2}
+  - {fileID: 11400000, guid: 3680411bbdcb8e740805f120ceb228ca, type: 2}
   inputs:
+  - {fileID: 11400000, guid: 7d887bd78f4d55d49a14433cd3089e97, type: 2}
   - {fileID: 11400000, guid: 34d935d107a94ef43aa015dd8ae0f986, type: 2}
-  - {fileID: 11400000, guid: f1ed89bab23a7564db049a6b0a2b5d40, type: 2}
 --- !u!4 &1393139395
 Transform:
   m_ObjectHideFlags: 0
