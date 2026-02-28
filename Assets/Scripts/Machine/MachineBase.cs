@@ -16,10 +16,6 @@ public abstract class MachineBase : MonoBehaviour
             energyManager = FindAnyObjectByType<EnergyManager>();
         }
     }
-    private void Update()
-    {
-        
-    }
     public void TurnOn()
     {
         if(isOn) return;
