@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0061480260934734d82e978937193a03
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - soundDatabase: {fileID: 11400000, guid: 535132f59b051ea448f773971aa04efd, type: 2}
+  - audioMixer: {instanceID: 0}
+  - defaultSfxGroup: {instanceID: 0}
+  - uiAudioSource: {instanceID: 0}
+  - uiMixerGroup: {instanceID: 0}
+  - musicSource: {instanceID: 0}
+  - musicMixerGroup: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
