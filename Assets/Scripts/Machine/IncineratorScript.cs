@@ -32,7 +32,11 @@ public class IncineratorScript : MachineBase
     }
     protected override void OnTurnedOn()
     {
-        if(incineratorParticles) incineratorParticles.Play();
+        if (incineratorParticles)
+        {
+            incineratorParticles.Play();
+            energyManager.SpendEnergy(1f);
+        }
     }
     protected override void OnTurnedOff()
     {

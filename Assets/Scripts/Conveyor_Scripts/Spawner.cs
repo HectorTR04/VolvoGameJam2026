@@ -22,23 +22,15 @@ public class Spawner : MachineBase
     private int currentIndex = 0;
         private Coroutine spawnRoutine;
 
-    private void Awake()
+    protected  override void Awake()
     {
+        base.Awake();
             CreateItemPool();
     }
     private void Start()
     {
-            StartCoroutine(spawning());
-    }
-
-    IEnumerator spawning()
-    {
-        while (spawningItem == true)
-        {
-            yield return new WaitForSeconds(spawnTime);
-
-            SpawnFromPool();
-        }
+            // StartCoroutine(SpawningLoop());
+            TurnOn();
     }
 
     private void CreateItemPool()
@@ -80,9 +72,9 @@ public class Spawner : MachineBase
     }
     protected override void OnTurnedOn()
     {
-        if (spawnRoutine != null)
+        if (spawnRoutine == null)
         {
-            StopCoroutine(spawnRoutine);
+            spawnRoutine = StartCoroutine(SpawningLoop());
         }
     }
     protected override void OnTurnedOff()
@@ -90,7 +82,23 @@ public class Spawner : MachineBase
         if (spawnRoutine != null)
         {
             StopCoroutine(spawnRoutine);
+            spawnRoutine = null;
         }
 
+    }
+     private IEnumerator SpawningLoop()
+    {
+        // This loop runs while the machine is on
+        while (isOn)
+        {
+            yield return new WaitForSeconds(spawnTime);
+
+            // In case it was turned off during the wait
+            if (!isOn) yield break;
+
+            SpawnFromPool();
+        }
+
+        spawnRoutine = null;
     }
 }
