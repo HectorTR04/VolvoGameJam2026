@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSpawner : MonoBehaviour
+public class Crafting : MonoBehaviour
 {
+    public List<BaseRecipe> recipes;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
