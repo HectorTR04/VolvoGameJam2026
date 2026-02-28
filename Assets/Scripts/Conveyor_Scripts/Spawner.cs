@@ -5,9 +5,16 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject item;
+    [SerializeField] 
+    public GameObject[] item;
     public Transform spawnPoint;
     public bool spawningItem = true;
+
+    // Maybe for energy stuff
+    public bool isOn  = true;
+    public float currentEnergy;
+    public float maxEnergy;
+
     public float spawnTime;
     public int poolSize = 100;
 
@@ -16,11 +23,11 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        CreateItemPool();
+            CreateItemPool();
     }
     private void Start()
     {
-        StartCoroutine(spawning());
+            StartCoroutine(spawning());
     }
 
     IEnumerator spawning()
@@ -38,7 +45,9 @@ public class Spawner : MonoBehaviour
         itemPool = new List<GameObject>();
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject newObject = Instantiate(item, spawnPoint.position, spawnPoint.rotation);
+            GameObject itemToInstantiate = item[Random.Range(0, item.Length)];
+
+            GameObject newObject = Instantiate(itemToInstantiate, spawnPoint.position, spawnPoint.rotation);
             newObject.transform.SetParent(transform);
             newObject.SetActive(false);
 
