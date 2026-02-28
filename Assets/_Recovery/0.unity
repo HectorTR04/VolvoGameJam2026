@@ -119,24 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &40462659 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8744383265647479910, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-  m_PrefabInstance: {fileID: 952911467155761250}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &40462664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40462659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa43a62402858784fae60655126b4dad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PowerButton
-  objToTurnOnOrOff: {fileID: 876682448}
 --- !u!1001 &140600998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -397,7 +379,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6d557e36a748a3c42a3996674c58cdd0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.662
+      value: -16.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d557e36a748a3c42a3996674c58cdd0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -405,7 +387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d557e36a748a3c42a3996674c58cdd0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.141
+      value: -2.1284094
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d557e36a748a3c42a3996674c58cdd0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -886,9 +868,6 @@ MonoBehaviour:
   - {fileID: 7636578746518379423, guid: a2ea1131ad2452949807bda9d285357f, type: 3}
   spawnPoint: {fileID: 346467010}
   spawningItem: 1
-  isOn: 1
-  currentEnergy: 0
-  maxEnergy: 0
   spawnTime: 2
   poolSize: 20
 --- !u!1 &1047204914 stripped
@@ -1156,7 +1135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ed54b395c9f2ac418a3a116614992f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.46
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ed54b395c9f2ac418a3a116614992f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1441,7 +1420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ed54b395c9f2ac418a3a116614992f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.21
+      value: -7.853114e-14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ed54b395c9f2ac418a3a116614992f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1574,66 +1553,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1047204921}
   m_SourcePrefab: {fileID: 100100000, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
---- !u!1001 &952911467155761250
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -16.779
-      objectReference: {fileID: 0}
-    - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.239
-      objectReference: {fileID: 0}
-    - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.906
-      objectReference: {fileID: 0}
-    - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8744383265647479910, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      propertyPath: m_Name
-      value: Power button
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8744383265647479910, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 40462664}
-  m_SourcePrefab: {fileID: 100100000, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
 --- !u!1001 &1208581840986879222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1713,4 +1632,3 @@ SceneRoots:
   - {fileID: 1992175890}
   - {fileID: 2066948812}
   - {fileID: 627527936}
-  - {fileID: 952911467155761250}

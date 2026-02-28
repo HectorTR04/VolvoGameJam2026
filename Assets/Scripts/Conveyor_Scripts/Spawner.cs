@@ -9,6 +9,12 @@ public class Spawner : MonoBehaviour
     public GameObject[] item;
     public Transform spawnPoint;
     public bool spawningItem = true;
+
+    // Maybe for energy stuff
+    public bool isOn  = true;
+    public float currentEnergy;
+    public float maxEnergy;
+
     public float spawnTime;
     public int poolSize = 100;
 
@@ -17,11 +23,11 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        CreateItemPool();
+            CreateItemPool();
     }
     private void Start()
     {
-        StartCoroutine(spawning());
+            StartCoroutine(spawning());
     }
 
     IEnumerator spawning()
