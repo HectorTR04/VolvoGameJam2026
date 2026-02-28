@@ -18,5 +18,6 @@ public enum ItemType
     Fire,
     Earth,
     Air,
-    Steam
+    Steam,
+    Dirt
 }

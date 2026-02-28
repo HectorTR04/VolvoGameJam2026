@@ -20,7 +20,7 @@ public class Crafting : MonoBehaviour
             if(DoesRecipeExist(inputItems, recipe))
             {
                 Debug.Log("recipe exists lol");
-                OutputItem(recipe);
+                Craft(inputItems, recipe);
             }
         }
     }
@@ -50,17 +50,25 @@ public class Crafting : MonoBehaviour
     {
         for (int i = 0; i < recipe.recipe.Length; i++)
         {
-                if (recipe.recipe[i] != inputItems[i])
-                {
-                    return false;
-                }
+            if (recipe.recipe[i] != inputItems[i])
+            {
+                return false;
+            }
         }
         return true;
     }
 
-    public void OutputItem(BaseRecipe recipe)
+    public void Craft(BaseItem[] inputItems, BaseRecipe recipe)
     {
-        //do something with recipe.outputItem
+        for(int i = 0; i < inputItems.Length; i++)
+        {
+            Destroy(inputItems[i]);
+        }
+
+        Item outputItem = new Item(recipe.outputItem);
+
+        //instantiate prefab with the crafted item
+
     }
 
 }
