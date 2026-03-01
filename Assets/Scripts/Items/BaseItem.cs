@@ -6,11 +6,13 @@ public class BaseItem : ScriptableObject
 {
     public string itemName;
     public float energyValue;
+    public float emissionValue;
     public bool discovered;
-    public Sprite sprite;
-    public ItemType type;
+    //public Sprite sprite;
+    //public ItemType type;
 }
 
+//Lowk dont need the enum
 public enum ItemType
 {
     None,
