@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Trash
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Trash
-  energyValue: 0
-  energyCostValue: 0
-  emissionValue: 0
+  energyValue: 20
+  energyCostValue: 10
+  emissionValue: 30
   discovered: 0

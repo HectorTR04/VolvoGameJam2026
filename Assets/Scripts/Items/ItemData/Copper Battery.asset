@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Copper Battery
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Copper Battery
-  energyValue: 0
-  emissionValue: 0
+  energyValue: 80
+  energyCostValue: 30
+  emissionValue: 5
   discovered: 0

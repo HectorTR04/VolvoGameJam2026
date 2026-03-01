@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heat-Resisant Alloy
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Heat-Resistant Alloy
-  energyValue: 0
-  energyCostValue: 0
-  emissionValue: 0
+  energyValue: 40
+  energyCostValue: 70
+  emissionValue: 15
   discovered: 0

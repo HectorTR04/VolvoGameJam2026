@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carbon
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Carbon
-  energyValue: 0
-  energyCostValue: 0
-  emissionValue: 0
+  energyValue: 20
+  energyCostValue: 10
+  emissionValue: 20
   discovered: 0

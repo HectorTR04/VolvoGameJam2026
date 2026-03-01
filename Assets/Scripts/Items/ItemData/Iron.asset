@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Iron
-  energyValue: 0
-  energyCostValue: 0
-  emissionValue: 0
+  energyValue: 10
+  energyCostValue: 40
+  emissionValue: 25
   discovered: 0
