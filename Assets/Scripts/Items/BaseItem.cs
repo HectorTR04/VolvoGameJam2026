@@ -6,6 +6,7 @@ public class BaseItem : ScriptableObject
 {
     public string itemName;
     public float energyValue;
+    public float energyCostValue;
     public float emissionValue;
     public bool discovered;
     //public Sprite sprite;

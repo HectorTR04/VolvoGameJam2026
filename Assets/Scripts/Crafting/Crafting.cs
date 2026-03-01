@@ -2,12 +2,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Crafting : MonoBehaviour
 {
     public List<BaseRecipe> recipes;
     public Item[] inputs = new Item[2];
     public BaseItem[] baseItemInputs = new BaseItem[2];
+
+    [SerializeField] EmissionManager EmissionManager;
+    [SerializeField] EnergyManager EnergyManager;
 
     public void Awake()
     {   
@@ -33,6 +37,10 @@ public class Crafting : MonoBehaviour
             {
                 Debug.Log("recipe exists lol");
                 Craft(recipe);
+            }
+            else
+            {
+                DestroyInputs();
             }
         }
     }
@@ -72,18 +80,26 @@ public class Crafting : MonoBehaviour
 
     public virtual void Craft(BaseRecipe recipe)
     {
-        for(int i = 0; i < inputs.Length; i++)
-        {
-            baseItemInputs[i] = null;
-            Destroy(inputs[i].gameObject);
-            inputs[i] = null;
-        }
+        DestroyInputs();
 
         Item outputItem = new Item();
         outputItem.baseData = recipe.outputItem;
 
         //instantiate prefab with the crafted item
 
+    }
+
+    public void DestroyInputs()
+    {
+        for (int i = 0; i < inputs.Length; i++)
+        {
+            //Energy cost is deducted here
+            EmissionManager.IncreaseEmissions(inputs[i].baseData.emissionValue); //increase emissions;
+            EnergyManager.DecreaseEnergy(inputs[i].baseData.energyCostValue);
+            baseItemInputs[i] = null;
+            Destroy(inputs[i].gameObject);
+            inputs[i] = null;
+        }
     }
 
 }

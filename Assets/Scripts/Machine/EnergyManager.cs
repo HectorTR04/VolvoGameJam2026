@@ -55,4 +55,14 @@ public class EnergyManager : MonoBehaviour
     {
         Energy = Mathf.Clamp(Energy - amount, 0f, maxEnergy);
     }
+
+    public void IncreaseEnergy(float amount)
+    {
+        energyLevel += amount;
+    }
+
+    public void DecreaseEnergy(float amount)
+    {
+        energyLevel -= amount;
+    }
 }
