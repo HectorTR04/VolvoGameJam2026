@@ -11,4 +11,14 @@ public class EnergyManager : MonoBehaviour
     {
 
     }
+
+    public void IncreaseEnergy(float amount)
+    {
+        energyLevel += amount;
+    }
+
+    public void DecreaseEnergy(float amount)
+    {
+        energyLevel -= amount;
+    }
 }
