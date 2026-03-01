@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07cb15e1d4fdbe4c9f3fe9d8fd026a8, type: 3}
   m_Name: SteamRecipe
   m_EditorClassIdentifier: Assembly-CSharp::BaseRecipe
-  outputItem: {fileID: 0}
+  outputItem: {fileID: 11400000, guid: f6e02ef4750617f4c848e12624647051, type: 2}
   recipe:
   - {fileID: 11400000, guid: f1ed89bab23a7564db049a6b0a2b5d40, type: 2}
   - {fileID: 11400000, guid: 34d935d107a94ef43aa015dd8ae0f986, type: 2}
