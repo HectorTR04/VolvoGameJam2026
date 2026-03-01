@@ -1,16 +1,30 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject m_itemTextObj;
+    [SerializeField] private GameObject m_energyTextObj;
+    [SerializeField] private GameObject m_moneyTextObj;
 
-    // Update is called once per frame
-    void Update()
+    private TextMeshProUGUI m_heldItemText;
+    private TextMeshProUGUI m_energyText;
+    private TextMeshProUGUI m_moneyText;
+
+    #region Unity Methods
+    private void Start()
     {
-        
+        m_heldItemText = m_itemTextObj.GetComponent<TextMeshProUGUI>();
+        m_energyText = m_energyTextObj.GetComponent<TextMeshProUGUI>();
+        m_moneyText = m_moneyTextObj.GetComponent<TextMeshProUGUI>();
+    }
+    #endregion
+
+    public void UpdateUI(Item heldItemData, float energyData, float moneyData)
+    {
+        m_energyText.text = energyData.ToString();
+        m_moneyText.text = moneyData.ToString();
+        if (heldItemData == null) { m_heldItemText.text = string.Empty; return; }
+        m_heldItemText.text = heldItemData.baseData.name;
     }
 }
