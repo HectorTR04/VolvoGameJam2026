@@ -29,7 +29,7 @@ public class CraftingTable : MonoBehaviour, IInteractable
         PlaceItemOnTable();
 
         if (Crafting.inputs[1] != null) Crafting.CheckCraftingOutput();
-        
+            
     }
 
     public void PlaceItemOnTable()
@@ -39,6 +39,7 @@ public class CraftingTable : MonoBehaviour, IInteractable
         {
             if (Crafting.inputs[i] == null)
             {
+                //add code for physically placing the items on the table
                 Crafting.inputs[i] = PlayerInteraction.GetItem();
                 PlayerInteraction.GetRidOfItem();
                 break;

@@ -5,7 +5,11 @@ using UnityEngine.InputSystem;
 public class IncineratorScript : MachineBase
 {
     [SerializeField] private ParticleSystem incineratorParticles;
-    [SerializeField] private float energyPerTrash = 10f;
+
+    [SerializeField]
+    private float drainPerSecond = 1f;
+
+
     void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -24,10 +28,11 @@ public class IncineratorScript : MachineBase
     {
         if (!isOn || energyManager == null) return;
 
-        if (other.CompareTag("Trash"))
+        if (other.GetComponent<Item>())
         {
-            other.gameObject.SetActive(false);
-            energyManager.AddEnergy(energyPerTrash);
+            Item tempItem = other.GetComponent<Item>();
+            energyManager.AddEnergy(tempItem.baseData.energyValue); //Increase energy by baseItem's energy value
+            Destroy(other.gameObject);
         }
     }
     protected override void OnTurnedOn()
