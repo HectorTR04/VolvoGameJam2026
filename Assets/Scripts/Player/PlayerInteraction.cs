@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     private Vector3 m_verticalOffset = new(0, 0.5f, 0);
+    [SerializeField]
     private GameObject m_heldItem;
     private readonly Vector3 m_aboveHeadOffset = new(0, 2f, 0);
     private readonly float m_interactionRange = 2f;
@@ -69,5 +70,16 @@ public class PlayerInteraction : MonoBehaviour
         m_heldItem.transform.SetParent(gameObject.transform);
         m_heldItem.transform.position = gameObject.transform.position + m_aboveHeadOffset;
         m_heldItem.GetComponent<Collider>().enabled = false;
+    }
+
+    public Item GetItem()
+    {
+        if(m_heldItem) return m_heldItem.GetComponent<Item>();
+        else return null;
+    }
+
+    public void GetRidOfItem()
+    {
+        m_heldItem = null;
     }
 }

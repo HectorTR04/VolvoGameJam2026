@@ -2,12 +2,9 @@ using UnityEngine;
 
 public class Item : MonoBehaviour, IInteractable
 {
-    BaseItem baseData;
+    [SerializeField]
+    public BaseItem baseData;
 
-    public Item(BaseItem baseData)
-    {
-        this.baseData = baseData;
-    }
 
     public void OnInteract()
     {
@@ -23,4 +20,7 @@ public class Item : MonoBehaviour, IInteractable
     {
         
     }
+
+    public BaseItem GetBase()
+        { return baseData; }
 }
