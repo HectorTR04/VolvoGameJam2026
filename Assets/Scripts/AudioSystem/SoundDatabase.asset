@@ -12,4 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad12001a0d8b4a4cb2f720e66cd0897, type: 3}
   m_Name: SoundDatabase
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.AudioSystem.SoundDatabase
-  sounds: []
+  sounds:
+  - type: 4
+    clips:
+    - {fileID: 8300000, guid: 7baff094f91b73341943f9a3b3becf57, type: 3}
+    mixerGroup: {fileID: 8096615365271032106, guid: 59ceadefff6a74347a6ee70619f03840, type: 2}
+    baseVolume: 0.558
+    minPitch: 1
+    maxPitch: 1
+    spatial: 1
+    spatialBlend: 0
+    maxDistance: 0
+    rolloffMode: 0
+    loop: 0
+  - type: 2
+    clips:
+    - {fileID: 8300000, guid: 5054bb04cd07ea04a85237d61cc25f70, type: 3}
+    mixerGroup: {fileID: 8096615365271032106, guid: 59ceadefff6a74347a6ee70619f03840, type: 2}
+    baseVolume: 0.558
+    minPitch: 1
+    maxPitch: 1
+    spatial: 1
+    spatialBlend: 0
+    maxDistance: 0
+    rolloffMode: 0
+    loop: 0

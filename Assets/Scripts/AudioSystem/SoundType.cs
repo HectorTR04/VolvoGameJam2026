@@ -10,6 +10,7 @@ namespace Assets.Scripts.AudioSystem
         UI_MenuTheme, //Main theme main menu
 
         SFX_ConveyorbeltOn,
+        SFX_CraftingDone,
 
     }
 }
