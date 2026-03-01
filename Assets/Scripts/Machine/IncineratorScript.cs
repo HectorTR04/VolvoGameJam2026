@@ -6,10 +6,6 @@ public class IncineratorScript : MachineBase
 {
     [SerializeField] private ParticleSystem incineratorParticles;
 
-    [SerializeField]
-    private float drainPerSecond = 1f;
-
-
     void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
