@@ -4,11 +4,11 @@ using UnityEngine;
 public class EnergyManager : MonoBehaviour
 {
     [SerializeField] private float maxEnergy = 100f;
-    public float Energy { get; private set; }
+    public float EnergyLevel { get; private set; }
     private readonly List<MachineBase> activeMachines = new List<MachineBase>();
     void Awake()
     {
-        Energy = maxEnergy; // Initialize energy level to maxEnergy
+        EnergyLevel = maxEnergy; // Initialize energy level to maxEnergy
     }
     void Update()
     {
@@ -45,24 +45,14 @@ public class EnergyManager : MonoBehaviour
     }
     public bool HasEnergy(float amount)
     {
-        return Energy >= amount;
+        return EnergyLevel >= amount;
     }
     public void AddEnergy(float amount)
     {
-        Energy = Mathf.Clamp(Energy + amount, 0f, maxEnergy);
+        EnergyLevel = Mathf.Clamp(EnergyLevel + amount, 0f, maxEnergy);
     }
     public void SpendEnergy(float amount)
     {
-        Energy = Mathf.Clamp(Energy - amount, 0f, maxEnergy);
-    }
-
-    public void IncreaseEnergy(float amount)
-    {
-        energyLevel += amount;
-    }
-
-    public void DecreaseEnergy(float amount)
-    {
-        energyLevel -= amount;
+        EnergyLevel = Mathf.Clamp(EnergyLevel - amount, 0f, maxEnergy);
     }
 }
