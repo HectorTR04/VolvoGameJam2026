@@ -13,12 +13,7 @@ public class PlayerController : MonoBehaviour
     private PlayerMovement m_playerMovement;
     private PlayerAnimator m_playerAnimator;
     private PlayerInteraction m_playerInteraction;
-    private PlayerUI m_playerUI;
     private CharacterController m_characterController;
-
-    private EnergyManager m_energyManager;
-    private MoneyManager m_moneyManager;
-
 
     public Camera PlayerCamera { get { return m_playerCam; } }
 
@@ -46,16 +41,12 @@ public class PlayerController : MonoBehaviour
         m_playerMovement = GetComponent<PlayerMovement>();
         m_playerAnimator = GetComponent<PlayerAnimator>();
         m_playerInteraction = GetComponent<PlayerInteraction>();
-        m_playerUI = GetComponent<PlayerUI>();
         m_characterController = GetComponent<CharacterController>();
-        m_energyManager = GetComponent<EnergyManager>();
-        m_moneyManager = GetComponent<MoneyManager>();
     }
     private void Update()
     {
         m_playerMovement.Move(m_movementActions.Walk.ReadValue<Vector2>(), m_characterController);
         m_playerAnimator.Animate(m_movementActions.Walk.ReadValue<Vector2>());
-        m_playerUI.UpdateUI(m_playerInteraction.GetItem(), m_energyManager.EnergyLevel, m_moneyManager.CurrentMoney);
     }
     #endregion
 }
