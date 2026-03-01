@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     private Vector3 m_verticalOffset = new(0, 0.5f, 0);
-    [SerializeField]
     private GameObject m_heldItem;
     private readonly Vector3 m_aboveHeadOffset = new(0, 2f, 0);
     private readonly float m_interactionRange = 2f;
