@@ -36,9 +36,14 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnTime);
 
-            SpawnFromPool();
+            if (enabled)
+            {
+                SpawnFromPool();
+
+            }
         }
     }
+
 
     private void CreateItemPool()
     {

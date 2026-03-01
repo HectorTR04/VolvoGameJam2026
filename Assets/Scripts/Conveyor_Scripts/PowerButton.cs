@@ -1,26 +1,30 @@
 using UnityEngine;
 
-public class PowerButton : MonoBehaviour
+public class PowerButton : MonoBehaviour, IInteractable
 {
-    public GameObject objToTurnOnOrOff;
+    public Spawner spawnerOnOff;
+    public bool isOn = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void IInteractable.OnInteract()
     {
-        
-    }
+        if (spawnerOnOff == null)
+            return;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    objToTurnOnOrOff.SetActive(false);
-        //}
+        if (isOn)
+        {
+            spawnerOnOff.enabled = false;
+            spawnerOnOff.isOn = false;
 
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    objToTurnOnOrOff.SetActive(true);
-        //}
+            Debug.Log("Off");
+            isOn = false;
+        }
+        else
+        {
+            spawnerOnOff.enabled = true;
+            spawnerOnOff.isOn = true;
+
+            Debug.Log("On");
+            isOn = true;
+        }
     }
 }
