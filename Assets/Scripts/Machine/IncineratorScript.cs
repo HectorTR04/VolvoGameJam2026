@@ -31,18 +31,18 @@ public class IncineratorScript : MonoBehaviour
         {
             return;
         }
-        energyManager.energyLevel -= Time.deltaTime * drainPerSecond;
-        if (energyManager.energyLevel <= 0)
+        energyManager.EnergyLevel -= Time.deltaTime * drainPerSecond;
+        if (energyManager.EnergyLevel <= 0)
         {
-            energyManager.energyLevel = 0f;
+            energyManager.EnergyLevel = 0f;
             TurnOffIncinerator();
         }
-        Debug.Log($"Energy Level: {energyManager.energyLevel}");
+        Debug.Log($"Energy Level: {energyManager.EnergyLevel}");
     }
     public void TurnOnIncinerator()
     {
         if (isOn || energyManager == null) return;
-        if (energyManager.energyLevel <= 0f) return; // optional: don't allow turning on at 0
+        if (energyManager.EnergyLevel <= 0f) return; // optional: don't allow turning on at 0
 
         if (incineratorParticles) incineratorParticles.Play();
         isOn = true;
@@ -61,7 +61,7 @@ public class IncineratorScript : MonoBehaviour
         if (other.CompareTag("Trash"))
         {
             other.gameObject.SetActive(false);
-            energyManager.energyLevel += energyPerTrash;
+            energyManager.EnergyLevel += energyPerTrash;
         }
     }
 
