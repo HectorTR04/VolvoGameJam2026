@@ -16,4 +16,5 @@ MonoBehaviour:
   energyValue: 10
   energyCostValue: 40
   emissionValue: 25
+  sellValue: 10
   discovered: 0

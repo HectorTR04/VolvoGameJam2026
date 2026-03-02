@@ -8,6 +8,7 @@ public class BaseItem : ScriptableObject
     public float energyValue;
     public float energyCostValue;
     public float emissionValue;
+    public float sellValue;
     public bool discovered;
     //public Sprite sprite;
     //public ItemType type;

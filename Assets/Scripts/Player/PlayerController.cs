@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
         m_actions = new PlayerActions();
         m_movementActions = m_actions.Movement;
         m_interactions = m_actions.Interaction;
-        m_interactions.Interact.performed += ctx => m_playerAnimator.AnimateInteraction();
         m_interactions.Interact.performed += ctx => m_playerInteraction.Interact();
     }
     private void Start()
