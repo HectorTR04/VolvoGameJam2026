@@ -43274,6 +43274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trophies
       objectReference: {fileID: 0}
+    - target: {fileID: 8596023245069951208, guid: 3590b631a5485684e9fd76fbc3f406eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0532
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
