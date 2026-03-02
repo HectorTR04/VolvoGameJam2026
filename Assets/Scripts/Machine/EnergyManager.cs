@@ -8,7 +8,7 @@ public class EnergyManager : MonoBehaviour
     private readonly List<MachineBase> activeMachines = new List<MachineBase>();
 
     [Header("Battery Production")]
-    [SerializeField] private float batteryBaseRate = 0.75f;
+    [SerializeField] private float batteryBaseRate = 0.65f;
     [SerializeField] private float batteryExponent = 1.05f;
         private int batteryCount;
 
