@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Aluminum Battery
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Aluminum Battery
-  energyValue: 0
+  energyValue: 100
+  energyCostValue: 50
   emissionValue: 0
+  sellValue: 60
   discovered: 0

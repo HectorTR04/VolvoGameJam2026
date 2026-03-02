@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Cathode
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Cathode
-  energyValue: 0
-  emissionValue: 0
+  energyValue: 30
+  energyCostValue: 25
+  emissionValue: 15
+  sellValue: 25
   discovered: 0

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Steel
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Steel
-  energyValue: 0
-  energyCostValue: 0
-  emissionValue: 0
+  energyValue: 15
+  energyCostValue: 20
+  emissionValue: 15
+  sellValue: 20
   discovered: 0

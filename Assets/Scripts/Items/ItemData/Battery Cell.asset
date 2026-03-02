@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Battery Cell
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Battery Cell
-  energyValue: 0
-  emissionValue: 0
+  energyValue: 50
+  energyCostValue: 50
+  emissionValue: 10
+  sellValue: 30
   discovered: 0

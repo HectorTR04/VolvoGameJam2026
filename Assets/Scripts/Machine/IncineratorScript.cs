@@ -2,67 +2,45 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class IncineratorScript : MonoBehaviour
+public class IncineratorScript : MachineBase
 {
-    [SerializeField]
-    private ParticleSystem incineratorParticles;
-    [SerializeField]
-    private EnergyManager energyManager;
-    [SerializeField]
-    private float drainPerSecond = 1f;
-    [SerializeField]
-    private float energyPerTrash = 10f;
-    private bool isOn;
+    [SerializeField] private ParticleSystem incineratorParticles;
+
     void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             if (isOn)
             {
-                TurnOffIncinerator();
+                TurnOff();
             }
             else
             {
-                TurnOnIncinerator();
+                TurnOn();
             }
         }
-
-        if (!isOn || energyManager == null)
-        {
-            return;
-        }
-        energyManager.energyLevel -= Time.deltaTime * drainPerSecond;
-        if (energyManager.energyLevel <= 0)
-        {
-            energyManager.energyLevel = 0f;
-            TurnOffIncinerator();
-        }
-        Debug.Log($"Energy Level: {energyManager.energyLevel}");
-    }
-    public void TurnOnIncinerator()
-    {
-        if (isOn || energyManager == null) return;
-        if (energyManager.energyLevel <= 0f) return; // optional: don't allow turning on at 0
-
-        if (incineratorParticles) incineratorParticles.Play();
-        isOn = true;
-    }
-    public void TurnOffIncinerator()
-    {
-        if (!isOn) return;
-
-        if (incineratorParticles) incineratorParticles.Stop();
-        isOn = false;
     }
     public void OnTriggerEnter(Collider other)
     {
         if (!isOn || energyManager == null) return;
 
-        if (other.CompareTag("Trash"))
+        if (other.GetComponent<Item>())
         {
-            other.gameObject.SetActive(false);
-            energyManager.energyLevel += energyPerTrash;
+            Item tempItem = other.GetComponent<Item>();
+            energyManager.AddEnergy(tempItem.baseData.energyValue); //Increase energy by baseItem's energy value
+            Destroy(other.gameObject);
         }
     }
-
+    protected override void OnTurnedOn()
+    {
+        if (incineratorParticles)
+        {
+            incineratorParticles.Play();
+            energyManager.SpendEnergy(1f);
+        }
+    }
+    protected override void OnTurnedOff()
+    {
+        if(incineratorParticles) incineratorParticles.Stop();
+    }
 }

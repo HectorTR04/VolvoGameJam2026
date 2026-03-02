@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Lithium
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Lithium
-  energyValue: 0
-  emissionValue: 0
+  energyValue: 25
+  energyCostValue: 30
+  emissionValue: 15
+  sellValue: 10
   discovered: 0

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Graphite
   m_EditorClassIdentifier: Assembly-CSharp::BaseItem
   itemName: Graphite
-  energyValue: 0
-  emissionValue: 0
+  energyValue: 20
+  energyCostValue: 20
+  emissionValue: 30
+  sellValue: 5
   discovered: 0
