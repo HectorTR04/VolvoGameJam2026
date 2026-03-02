@@ -91,6 +91,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public void GetRidOfItem()
     {
+        Destroy(m_heldItem);
         m_heldItem = null;
     }
 }
