@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 5042261996897469249}
   - component: {fileID: 1949240415176821882}
   - component: {fileID: 3041790729849654356}
+  - component: {fileID: 475165617210280878}
   m_Layer: 0
   m_Name: Lithium
   m_TagString: Untagged
@@ -194,3 +195,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BeltItem
   item: {fileID: 8079927310044602539}
+--- !u!54 &475165617210280878
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8079927310044602539}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 1.34
+  m_AngularDamping: 0.95
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
