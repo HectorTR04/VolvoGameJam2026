@@ -31,8 +31,8 @@ if (item == null || item.Length == 0) Debug.LogError("Spawner: item[] not assign
     }
     private void Start()
     {
-            // StartCoroutine(SpawningLoop());
-            TurnOn();
+            StartCoroutine(SpawningLoop());
+            // TurnOn();
     }
 
     private void CreateItemPool()
