@@ -37609,9 +37609,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Incenerator
       objectReference: {fileID: 0}
+    - target: {fileID: 5501523638221736633, guid: 7bf5260635fc63d42b62438dc1904351, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.71
+      objectReference: {fileID: 0}
     - target: {fileID: 5842390761382511032, guid: 7bf5260635fc63d42b62438dc1904351, type: 3}
       propertyPath: energyManager
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792845528961405469, guid: 7bf5260635fc63d42b62438dc1904351, type: 3}
+      propertyPath: m_Size.y
+      value: 0.99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
