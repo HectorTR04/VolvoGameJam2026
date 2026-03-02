@@ -24,7 +24,7 @@ public class PlayerUI : MonoBehaviour
     public void UpdateUI(Item heldItemData, float energyData, float moneyData)
     {
         m_energyText.text = energyData.ToString();
-        m_moneyText.text = moneyData.ToString();
+        m_moneyText.text = moneyData.ToString() + "$";
         if (heldItemData == null) { m_heldItemText.text = string.Empty; return; }
         m_heldItemText.text = heldItemData.baseData.name;
     }
