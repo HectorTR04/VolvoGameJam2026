@@ -6,9 +6,11 @@ public class ItemPedestal : MonoBehaviour
     [SerializeField] BaseItem storedItem;
     [SerializeField] BaseRecipe recipe;
     [SerializeField] GameObject itemObject;
+    public bool active;
 
     private void Start()
     {
+        itemObject = GetComponentInChildren<Item>().gameObject;
         itemObject.SetActive(false);
     }
 
@@ -23,6 +25,7 @@ public class ItemPedestal : MonoBehaviour
         if(storedItem.discovered)
         {
             itemObject.SetActive(true);
+            active = true;
         }
     }
 
