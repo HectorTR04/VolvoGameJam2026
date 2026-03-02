@@ -3,24 +3,27 @@ using UnityEngine;
 
 public class EnergyManager : MonoBehaviour
 {
-    [SerializeField] private float maxEnergy = 100f;
+    [SerializeField] private float maxEnergy = 20f;
     public float EnergyLevel { get; private set; }
     private readonly List<MachineBase> activeMachines = new List<MachineBase>();
 
-
+    [Header("Battery Production")]
     [SerializeField] private float batteryBaseRate = 0.75f;
-[SerializeField] private float batteryExponent = 1.1f;
-private int batteryCount;
+    [SerializeField] private float batteryExponent = 1.1f;
+        private int batteryCount;
 
-public void RegisterBattery() => batteryCount++;
-public void UnregisterBattery() => batteryCount = Mathf.Max(0, batteryCount - 1);
+    public void RegisterBattery(BatteryItem battery) => batteryCount++;
+    public void UnregisterBattery(BatteryItem battery) => batteryCount = Mathf.Max(0, batteryCount - 1);
+
+
     void Awake()
     {
-        EnergyLevel = maxEnergy; // Initialize energy level to maxEnergy
+        EnergyLevel = 0; // Initialize energy level to maxEnergy
     }
     void Update()
     {
-        Debug.Log("Energy Level: " + EnergyLevel);
+        Debug.Log($"batteries={batteryCount} prod/s={BatteryProductionPerSecond():F2} energy={EnergyLevel:F1}");
+                AddEnergy(BatteryProductionPerSecond() * Time.deltaTime);
         if (activeMachines.Count == 0) return;
         
         float totalDrainPerSecond = 0f;
@@ -35,7 +38,6 @@ public void UnregisterBattery() => batteryCount = Mathf.Max(0, batteryCount - 1)
 
             totalDrainPerSecond += activeMachines[i].DrainPerSecond;
         }
-        AddEnergy(BatteryProductionPerSecond() * Time.deltaTime);
         
                 SpendEnergy(totalDrainPerSecond * Time.deltaTime);
                         if (EnergyLevel <= 0f)
@@ -83,8 +85,8 @@ public void UnregisterBattery() => batteryCount = Mathf.Max(0, batteryCount - 1)
         EnergyLevel = Mathf.Clamp(EnergyLevel - amount, 0f, maxEnergy);
     }
     private float BatteryProductionPerSecond()
-{
-    if (batteryCount <= 0) return 0f;
-    return batteryBaseRate * Mathf.Pow(batteryCount, batteryExponent);
-}
+    {
+        if (batteryCount <= 0) return 0f;
+        return batteryBaseRate * Mathf.Pow(batteryCount, batteryExponent);
+    }
 }

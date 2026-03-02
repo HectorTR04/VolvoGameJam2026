@@ -1,50 +1,93 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 
 [RequireComponent(typeof(Collider))]
-public class CoilSlot : MonoBehaviour
+public class CoilSlot : MonoBehaviour, IInteractable
 {
-        [SerializeField] private Transform snapPoint;
+
+    [Header("References")]
     [SerializeField] private EnergyManager energyManager;
+    [SerializeField] private PlayerInteraction player;
 
-    [SerializeField] private string batteryItemName = "Aluminium Battery"; // match your BaseItem name
+    [Header("Battery rules")]
+    [SerializeField] private string batteryItemName = "Aluminium Battery";
+    [SerializeField] private int capacity = 4;
 
-    private Item currentItem;
+    [Header("Snap points (optional but recommended)")]
+    [SerializeField] private Transform[] snapPoints; // set size to 4 in inspector
 
-    private void Reset()
-    {
-        GetComponent<Collider>().isTrigger = true;
-    }
+    private readonly List<Item> storedItems = new();
+    private readonly List<BatteryItem> storedBatteries = new();
 
     private void Awake()
     {
         if (!energyManager)
             energyManager = FindAnyObjectByType<EnergyManager>();
+        if (!player)
+            player = FindAnyObjectByType<PlayerInteraction>();
 
-        if (!snapPoint)
-            Debug.LogError($"{name}: snapPoint not assigned.", this);
+        if (!energyManager)
+            Debug.LogError($"{name}: EnergyManager not found.", this);
+        if (!player)
+            Debug.LogError($"{name}: PlayerInteraction not found.", this);
+
+        if (snapPoints != null && snapPoints.Length > 0 && snapPoints.Length < capacity)
+            Debug.LogWarning($"{name}: snapPoints has fewer than capacity. Batteries may overlap.", this);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnInteract()
     {
-        if (currentItem != null) return; // already occupied
+        if (!player || !energyManager) return;
 
-        Item item = other.GetComponentInParent<Item>();
-        if (item == null || item.baseData == null) return;
+        // If full, do nothing (or you can implement removal on second press)
+        if (storedItems.Count >= capacity)
+        {
+            Debug.Log("Coil is full.");
+            return;
+        }
 
-        if (item.baseData.itemName != batteryItemName) return;
+        Item held = player.GetItem();
+        if (held == null || held.baseData == null)
+        {
+            Debug.Log("Player not holding an item.");
+            return;
+        }
 
-        Insert(item);
+        if (held.baseData.itemName != batteryItemName)
+        {
+            Debug.Log($"Not a battery: {held.baseData.itemName}");
+            return;
+        }
+
+        BatteryItem batteryMarker = held.GetComponent<BatteryItem>();
+        if (!batteryMarker)
+        {
+            Debug.Log("Held item missing BatteryItem component.");
+            return;
+        }
+
+        InsertBattery(held, batteryMarker);
+        player.GetRidOfItem();
     }
 
-    private void Insert(Item item)
+    private void InsertBattery(Item item, BatteryItem battery)
     {
-        currentItem = item;
+        storedItems.Add(item);
+        storedBatteries.Add(battery);
 
-        // snap into place
-        item.transform.SetPositionAndRotation(snapPoint.position, snapPoint.rotation);
+        item.transform.SetParent(null);
 
-        // optional lock
+        // Snap to position
+        Transform snap = GetSnapPointForIndex(storedItems.Count - 1);
+        if (snap != null)
+            item.transform.SetPositionAndRotation(snap.position, snap.rotation);
+
+        // Collider back on (optional)
+        var col = item.GetComponent<Collider>();
+        if (col) col.enabled = true;
+
+        // Lock physics
         if (item.TryGetComponent<Rigidbody>(out var rb))
         {
             rb.linearVelocity = Vector3.zero;
@@ -52,17 +95,16 @@ public class CoilSlot : MonoBehaviour
             rb.isKinematic = true;
         }
 
-        energyManager?.RegisterBattery();
+        // Count this battery as active generation
+        energyManager.RegisterBattery(battery);
+
+        Debug.Log($"Inserted battery ({storedItems.Count}/{capacity})");
     }
 
-    public void Remove()
+    private Transform GetSnapPointForIndex(int index)
     {
-        if (currentItem == null) return;
-
-        if (currentItem.TryGetComponent<Rigidbody>(out var rb))
-            rb.isKinematic = false;
-
-        currentItem = null;
-        energyManager?.UnregisterBattery();
+        if (snapPoints == null || snapPoints.Length == 0) return null;
+        if (index < 0 || index >= snapPoints.Length) return snapPoints[snapPoints.Length - 1];
+        return snapPoints[index];
     }
 }
