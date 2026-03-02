@@ -1,30 +1,17 @@
 using UnityEngine;
 
-public class PowerButton : MonoBehaviour, IInteractable
+public class PowerButton : MonoBehaviour
 {
-    public Spawner spawnerOnOff;
-    public bool isOn = true;
+    [SerializeField] private MachineBase targetMachine;
 
-    void IInteractable.OnInteract()
+    public void Press()
     {
-        if (spawnerOnOff == null)
+        if (targetMachine == null)
+        {
+            Debug.LogError($"{name}: No target machine assigned.", this);
             return;
-
-        if (isOn)
-        {
-            spawnerOnOff.enabled = false;
-            spawnerOnOff.isOn = false;
-
-            Debug.Log("Off");
-            isOn = false;
         }
-        else
-        {
-            spawnerOnOff.enabled = true;
-            spawnerOnOff.isOn = true;
 
-            Debug.Log("On");
-            isOn = true;
-        }
+        targetMachine.Toggle();
     }
 }

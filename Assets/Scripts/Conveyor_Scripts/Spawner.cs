@@ -26,6 +26,8 @@ public class Spawner : MachineBase
     {
         base.Awake();
             CreateItemPool();
+            if (spawnPoint == null) Debug.LogError("Spawner: spawnPoint not assigned", this);
+if (item == null || item.Length == 0) Debug.LogError("Spawner: item[] not assigned", this);
     }
     private void Start()
     {
@@ -50,25 +52,23 @@ public class Spawner : MachineBase
 
     private void SpawnFromPool()
     {
-        GameObject itemToSpawn = itemPool[currentIndex];
+    GameObject itemToSpawn = itemPool[currentIndex];
 
-        itemToSpawn.transform.position = spawnPoint.position;
-        itemToSpawn.transform.rotation = spawnPoint.rotation;
-        itemToSpawn.SetActive(true);
+    itemToSpawn.transform.position = spawnPoint.position;
+    itemToSpawn.transform.rotation = spawnPoint.rotation;
+    itemToSpawn.SetActive(true);
 
-        Rigidbody rb = itemToSpawn.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector3.zero;
-            rb.AddForce(spawnPoint.forward * 5f, ForceMode.Impulse);
-        }
+    Debug.Log($"Spawned {itemToSpawn.name} at {spawnPoint.position}");
 
-        currentIndex++;
+    Rigidbody rb = itemToSpawn.GetComponent<Rigidbody>();
+    if (rb != null)
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.AddForce(spawnPoint.forward * 5f, ForceMode.Impulse);
+    }
 
-        if (currentIndex >= poolSize)
-        {
-            currentIndex = 0;
-        }
+    currentIndex = (currentIndex + 1) % itemPool.Count;
     }
     protected override void OnTurnedOn()
     {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Assets.Scripts.AudioSystem;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -80,6 +81,7 @@ public class Crafting : MonoBehaviour
 
     public virtual void Craft(BaseRecipe recipe)
     {
+        SoundManager.PlayAt(SoundType.SFX_CraftingDone, transform.position);
         DestroyInputs();
 
         Item outputItem = new Item();
