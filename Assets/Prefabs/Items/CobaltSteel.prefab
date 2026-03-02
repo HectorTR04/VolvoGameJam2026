@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8744383265647479910
+--- !u!1 &2137579342110606909
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6839193818556462349}
-  - component: {fileID: 8266827862242620649}
-  - component: {fileID: 3975393181496198780}
-  - component: {fileID: 499923638592035693}
-  - component: {fileID: 7751134609798414185}
+  - component: {fileID: 3474684398462789321}
+  - component: {fileID: 3475088707928772688}
+  - component: {fileID: 7720414759264362194}
+  - component: {fileID: 6022045372918616622}
+  - component: {fileID: 186892616648602454}
+  - component: {fileID: 9078287352219319180}
   m_Layer: 0
-  m_Name: Power button
+  m_Name: CobaltSteel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6839193818556462349
+--- !u!4 &3474684398462789321
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744383265647479910}
+  m_GameObject: {fileID: 2137579342110606909}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -16.779, y: 1.239, z: -2.77}
-  m_LocalScale: {x: 0.27248, y: 0.27248, z: 0.27248}
+  m_LocalRotation: {x: -0.6956504, y: 0.12676987, z: 0.12676986, w: 0.6956504}
+  m_LocalPosition: {x: -6.62, y: 0.00000346452, z: 9.22}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!33 &8266827862242620649
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 20.656}
+--- !u!33 &3475088707928772688
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744383265647479910}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3975393181496198780
+  m_GameObject: {fileID: 2137579342110606909}
+  m_Mesh: {fileID: -453133508485521038, guid: 3bfb8a0282e5db94783c1906015fc4ab, type: 3}
+--- !u!23 &7720414759264362194
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744383265647479910}
+  m_GameObject: {fileID: 2137579342110606909}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -68,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 54090724b63fadd44be83ab82b918d7d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,13 +93,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &499923638592035693
-CapsuleCollider:
+--- !u!135 &6022045372918616622
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744383265647479910}
+  m_GameObject: {fileID: 2137579342110606909}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -110,21 +111,40 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.2041132
-  m_Height: 3.4969153
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.748458, z: -0.7041138}
---- !u!114 &7751134609798414185
+  serializedVersion: 3
+  m_Radius: 0.01
+  m_Center: {x: 0, y: 0, z: 0.0012499997}
+--- !u!135 &186892616648602454
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137579342110606909}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.0039999993
+  m_Center: {x: 0, y: 0, z: 0.0012499997}
+--- !u!114 &9078287352219319180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744383265647479910}
+  m_GameObject: {fileID: 2137579342110606909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa43a62402858784fae60655126b4dad, type: 3}
+  m_Script: {fileID: 11500000, guid: f3e554ad8768000418338b5511363482, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PowerButton
-  spawner: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  baseData: {fileID: 11400000, guid: f1e46be1b4af17a428558fdd56483621, type: 2}
