@@ -45,7 +45,7 @@ public class ItemPedestal : MonoBehaviour, IInteractable
     {
         if (storedItem.discovered)
         {
-            recipeText.text = $"{storedItem.name}: \n {recipe.recipe[0].name} + {recipe.recipe[1].name}";
+            recipeText.text = $"{storedItem.itemName}: \n {recipe.recipe[0].itemName} + {recipe.recipe[1].itemName}";
         }
     }
 }
