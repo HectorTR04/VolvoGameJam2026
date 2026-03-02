@@ -3766,7 +3766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3033385469449237682, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 3033385469449237682, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3830,7 +3830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConveyorBelt
   speed: 100
-  dir: {x: 2, y: 0, z: 0}
+  dir: {x: 1, y: 0, z: 0}
   onBelt: []
 --- !u!1001 &164364537
 PrefabInstance:
@@ -7927,7 +7927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d557e36a748a3c42a3996674c58cdd0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2
+      value: 1.5600001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d557e36a748a3c42a3996674c58cdd0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17180,7 +17180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c886808291f248428f0cd912b473762, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09
+      value: -0.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c886808291f248428f0cd912b473762, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17820,7 +17820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4218802820577500739, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 4218802820577500739, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31777,7 +31777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConveyorBelt
   speed: 100
-  dir: {x: 2, y: 0, z: 0}
+  dir: {x: 1, y: 0, z: 0}
   onBelt: []
 --- !u!4 &1686502241 stripped
 Transform:
@@ -39289,7 +39289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3033385469449237682, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.103
+      value: -0.743
       objectReference: {fileID: 0}
     - target: {fileID: 3033385469449237682, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
       propertyPath: m_LocalPosition.z
@@ -42997,7 +42997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.379
+      value: 0.73899996
       objectReference: {fileID: 0}
     - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -43057,7 +43057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3033385469449237682, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 3033385469449237682, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
       propertyPath: m_LocalPosition.z

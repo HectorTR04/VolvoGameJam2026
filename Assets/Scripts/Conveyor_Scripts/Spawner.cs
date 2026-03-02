@@ -38,15 +38,37 @@ if (item == null || item.Length == 0) Debug.LogError("Spawner: item[] not assign
     private void CreateItemPool()
     {
         itemPool = new List<GameObject>();
-        for (int i = 0; i < poolSize; i++)
+
+        for (int i = 0; i < item.Length; i++)
+        {
+            GameObject newObject = Instantiate(item[i], spawnPoint.position, spawnPoint.rotation);
+            newObject.transform.SetParent(transform);
+            newObject.SetActive(false);
+            itemPool.Add(newObject);
+        }
+
+        for (int i = item.Length; i < poolSize; i++)
         {
             GameObject itemToInstantiate = item[Random.Range(0, item.Length)];
-
             GameObject newObject = Instantiate(itemToInstantiate, spawnPoint.position, spawnPoint.rotation);
             newObject.transform.SetParent(transform);
             newObject.SetActive(false);
+            itemPool.Add(newObject);
+        }
 
-            itemPool.Add( newObject );
+        Shuffle(itemPool);
+    }
+
+    private void Shuffle(List<GameObject> list)
+    {
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = Random.Range(0, n + 1);
+            GameObject value = list[k];
+            list[k] = list[n];
+            list[n] = value;
         }
     }
 
@@ -100,5 +122,5 @@ if (item == null || item.Length == 0) Debug.LogError("Spawner: item[] not assign
         }
 
         spawnRoutine = null;
-    }
+     }
 }
