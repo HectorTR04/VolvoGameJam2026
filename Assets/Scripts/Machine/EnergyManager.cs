@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class EnergyManager : MonoBehaviour
 {
-    [SerializeField] private float maxEnergy = 20f;
+    [SerializeField] private float maxEnergy = 100f;
     public float EnergyLevel { get; private set; }
     private readonly List<MachineBase> activeMachines = new List<MachineBase>();
 
     [Header("Battery Production")]
     [SerializeField] private float batteryBaseRate = 0.75f;
-    [SerializeField] private float batteryExponent = 1.1f;
+    [SerializeField] private float batteryExponent = 1.05f;
         private int batteryCount;
 
     public void RegisterBattery(BatteryItem battery) => batteryCount++;
@@ -18,7 +18,7 @@ public class EnergyManager : MonoBehaviour
 
     void Awake()
     {
-        EnergyLevel = 0; // Initialize energy level to maxEnergy
+        EnergyLevel = maxEnergy; // Initialize energy level to maxEnergy
     }
     void Update()
     {
