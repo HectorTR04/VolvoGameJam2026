@@ -104,7 +104,7 @@ public class Crafting : MonoBehaviour
         {
             if (prefab.GetComponent<Item>().baseData.itemName == outputItem.baseData.itemName)
             {
-                instantiatedItem = Instantiate(prefab);
+                instantiatedItem = Instantiate(prefab, Vector3.zero, Quaternion.identity);
                 return;
             }
         }

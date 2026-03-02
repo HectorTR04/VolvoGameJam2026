@@ -42,13 +42,19 @@ public class CraftingTable : MonoBehaviour, IInteractable
         PlaceItemOnTable();
 
         if (Crafting.inputs[1] != null) Crafting.CheckCraftingOutput();
+
+        if(Crafting.instantiatedItem)
+        {
+            PlaceItemUsingColliderBounds(Crafting.instantiatedItem);
+            Crafting.instantiatedItem = null;
+        }
             
     }
 
     public void PlaceItemOnTable()
     {
         Debug.Log(Crafting.inputs.Length);
-        for(int i = 0; i <  Crafting.inputs.Length; i++)
+        for (int i = 0; i < Crafting.inputs.Length; i++)
         {
             if (Crafting.inputs[i] == null)
             {
