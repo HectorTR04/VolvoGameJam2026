@@ -6,24 +6,10 @@ public class IncineratorScript : MachineBase
 {
     [SerializeField] private ParticleSystem incineratorParticles;
     IncineratorScript allIncinerators;
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         allIncinerators = FindAnyObjectByType<IncineratorScript>();
-    }
-
-    void Update()
-    {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            if (isOn)
-            {
-                TurnOff();
-            }
-            else
-            {
-                TurnOn();
-            }
-        }
     }
     public void OnTriggerEnter(Collider other)
     {
