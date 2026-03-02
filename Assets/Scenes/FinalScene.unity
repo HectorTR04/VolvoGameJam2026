@@ -51290,7 +51290,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2874087303005098282, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
       propertyPath: poolSize
-      value: 1
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2874087303005098282, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
       propertyPath: energyManager
