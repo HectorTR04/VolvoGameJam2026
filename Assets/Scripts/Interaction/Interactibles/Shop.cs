@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour, IInteractable
 {
-    MoneyManager MoneyManager;
-    PlayerInteraction PlayerInteraction;
+    [SerializeField] private MoneyManager MoneyManager;
+    [SerializeField] private PlayerInteraction PlayerInteraction;
 
     public void OnInteract()
     {

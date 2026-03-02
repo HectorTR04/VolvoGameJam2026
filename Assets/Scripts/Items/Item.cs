@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Item : MonoBehaviour, IInteractable
+public class Item : MonoBehaviour
 {
     [SerializeField]
     public BaseItem baseData;

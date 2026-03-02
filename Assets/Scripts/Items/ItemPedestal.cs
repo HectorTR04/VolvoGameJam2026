@@ -11,7 +11,8 @@ public class ItemPedestal : MonoBehaviour, IInteractable
     public bool active;
 
     private TextMeshProUGUI recipeText;
-
+    private float textTimer;
+    private readonly float timeToResetText = 2f;
 
     private void Start()
     {
@@ -22,6 +23,12 @@ public class ItemPedestal : MonoBehaviour, IInteractable
     private void Update()
     {
         IsDiscovered();
+        textTimer += Time.deltaTime;
+        if (textTimer > timeToResetText)
+        {
+            recipeText.text = string.Empty;
+            textTimer = 0f;
+        }
     }
 
     public void IsDiscovered()
@@ -36,6 +43,9 @@ public class ItemPedestal : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        recipeText.text = $"{storedItem.name}: \n {recipe.recipe[0].name} + {recipe.recipe[1].name}";
+        if (storedItem.discovered)
+        {
+            recipeText.text = $"{storedItem.name}: \n {recipe.recipe[0].name} + {recipe.recipe[1].name}";
+        }
     }
 }
