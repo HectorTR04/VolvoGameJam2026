@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         m_movementActions = m_actions.Movement;
         m_interactions = m_actions.Interaction;
         m_interactions.Interact.performed += ctx => m_playerInteraction.Interact();
+        m_interactions.OpenClipboard.performed += ctx => m_playerUI.ToggleClipboard();
     }
     private void Start()
     {
