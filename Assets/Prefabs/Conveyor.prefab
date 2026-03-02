@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4218802820577500739}
+  - component: {fileID: 2874087303005098282}
   m_Layer: 0
   m_Name: Conveyor
   m_TagString: Untagged
@@ -34,6 +35,28 @@ Transform:
   - {fileID: 4307958116351917936}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2874087303005098282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5057110379571943089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10785608b5b74848963aeb3a9d6badb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  energyManager: {fileID: 0}
+  drainPerSecond: 1
+  item:
+  - {fileID: 5838886028538990134, guid: f5d2cbe8c56df654d886fb5be57050fc, type: 3}
+  - {fileID: 2168843738333486339, guid: 9b0f92489d632db40a3df3fc6812481a, type: 3}
+  - {fileID: 8079927310044602539, guid: ac8c93d435f33f8428808663cf774f16, type: 3}
+  spawnPoint: {fileID: 4307958116351917936}
+  spawningItem: 1
+  spawnTime: 3
+  poolSize: 50
 --- !u!1 &8650579831696514434
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +82,7 @@ Transform:
   m_GameObject: {fileID: 8650579831696514434}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.652, y: 1.525, z: -2.05516}
+  m_LocalPosition: {x: -1.652, y: 1.374, z: -2.05516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
