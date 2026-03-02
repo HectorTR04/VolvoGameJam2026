@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Steel
   energyValue: 15
   energyCostValue: 20
-  emissionValue: 15
+  emissionValue: 5
   sellValue: 20
   discovered: 0

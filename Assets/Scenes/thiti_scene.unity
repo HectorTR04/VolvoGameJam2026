@@ -11231,10 +11231,6 @@ PrefabInstance:
       propertyPath: m_playerCam
       value: 
       objectReference: {fileID: 2079694195}
-    - target: {fileID: 1743343488641549152, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
-      propertyPath: batteryExponent
-      value: 1.05
-      objectReference: {fileID: 0}
     - target: {fileID: 6420582007678849711, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.609959
@@ -11277,10 +11273,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8142925337006631216, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8142925337006631216, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []

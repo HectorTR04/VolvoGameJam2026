@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Battery Cell
   energyValue: 50
   energyCostValue: 50
-  emissionValue: 10
+  emissionValue: 3
   sellValue: 30
   discovered: 0
