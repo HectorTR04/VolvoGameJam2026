@@ -3742,6 +3742,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 410473868013441414, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
+      propertyPath: dir.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905666529961356924, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
+      propertyPath: dir.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3033385469449237682, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.523
@@ -3786,7 +3794,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Belt (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2905666529961356924, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
+    - {fileID: 422734899949545193, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17786,6 +17796,26 @@ PrefabInstance:
       propertyPath: energyManager
       value: 
       objectReference: {fileID: 665030108}
+    - target: {fileID: 2874087303005098282, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
+      propertyPath: item.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874087303005098282, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
+      propertyPath: 'item.Array.data[3]'
+      value: 
+      objectReference: {fileID: 9101438549089302124, guid: eddcf662129c4044598a19bf6115d3f0, type: 3}
+    - target: {fileID: 2874087303005098282, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
+      propertyPath: 'item.Array.data[4]'
+      value: 
+      objectReference: {fileID: 4125575422937956029, guid: 69c758802402ff842ba62a00ff86f687, type: 3}
+    - target: {fileID: 2874087303005098282, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
+      propertyPath: 'item.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8716014635399373203, guid: 4caeece725a9b6a429c74dd58f8edb1f, type: 3}
+    - target: {fileID: 2874087303005098282, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
+      propertyPath: 'item.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8820587493002681220, guid: 4d5bb19cfe5e57e43b6be7aecb47d72d, type: 3}
     - target: {fileID: 4218802820577500739, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.68
@@ -39198,7 +39228,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Belt (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2905666529961356924, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
+    - {fileID: 410473868013441414, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -42900,6 +42932,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 410473868013441414, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
+      propertyPath: dir.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905666529961356924, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
+      propertyPath: dir.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3033385469449237682, guid: 6286f010ce5aced45bfa79a35b9a8844, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.523
