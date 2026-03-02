@@ -8,6 +8,7 @@ public abstract class MachineBase : MonoBehaviour
 
     public float DrainPerSecond => isOn ? drainPerSecond : 0f;
     protected bool isOn;
+    public bool IsOn => isOn;
 
     protected virtual void Awake()
     {
@@ -38,9 +39,18 @@ public abstract class MachineBase : MonoBehaviour
         isOn = false;
         OnTurnedOff();
     }
+    public void Toggle()
+{
+    if (isOn) TurnOff();
+    else TurnOn();
+}
     public void ForcedOffDueToNoEnergy()
     {
-        if(!isOn) return;
+        if (!isOn) return;
+
+        if (energyManager != null)
+            energyManager.Unregister(this);
+
         isOn = false;
         OnPowerLost();
     }

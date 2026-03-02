@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 4872234071805947186}
   - component: {fileID: 5042261996897469249}
   - component: {fileID: 1949240415176821882}
+  - component: {fileID: 3041790729849654356}
   m_Layer: 0
   m_Name: Lithium
   m_TagString: Untagged
@@ -180,3 +181,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   baseData: {fileID: 11400000, guid: a17bedaa809c52441bdbbde881ac3a16, type: 2}
+--- !u!114 &3041790729849654356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8079927310044602539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f492107c8c75540bfcdf12239effe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BeltItem
+  item: {fileID: 8079927310044602539}

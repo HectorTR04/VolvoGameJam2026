@@ -2,25 +2,16 @@ using UnityEngine;
 
 public class PowerButton : MonoBehaviour
 {
-    public GameObject objToTurnOnOrOff;
+    [SerializeField] private MachineBase targetMachine;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Press()
     {
-        
-    }
+        if (targetMachine == null)
+        {
+            Debug.LogError($"{name}: No target machine assigned.", this);
+            return;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    objToTurnOnOrOff.SetActive(false);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    objToTurnOnOrOff.SetActive(true);
-        //}
+        targetMachine.Toggle();
     }
 }

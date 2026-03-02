@@ -947,7 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa43a62402858784fae60655126b4dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerButton
-  objToTurnOnOrOff: {fileID: 876682448}
+  targetMachine: {fileID: 876682451}
 --- !u!1001 &40591821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6409,11 +6409,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22ecd9be43270534a9a6fac869b4aa6f, type: 3}
---- !u!1 &296894135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8142925337006631216, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
-  m_PrefabInstance: {fileID: 507538662}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &299896213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5492060115665883122, guid: 22ecd9be43270534a9a6fac869b4aa6f, type: 3}
@@ -11259,10 +11254,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8142925337006631216, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 665030111}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
 --- !u!1001 &510860307
 PrefabInstance:
@@ -13529,19 +13521,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6420582007678849711, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
   m_PrefabInstance: {fileID: 507538662}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &665030111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296894135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f429f10e602734a91e1cfe22752ad5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerPickUpDrop
-  m_playerCam: {fileID: 2079694195}
 --- !u!1001 &665056635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17911,8 +17890,9 @@ MonoBehaviour:
   energyManager: {fileID: 903555107}
   drainPerSecond: 1
   item:
-  - {fileID: 4894444789181684720, guid: c00bdcc40a71e214fa6cc2b7bb22505e, type: 3}
-  - {fileID: 8973857537430353459, guid: 60a5ca13da63cbc49b5a5715de065965, type: 3}
+  - {fileID: 5838886028538990134, guid: f5d2cbe8c56df654d886fb5be57050fc, type: 3}
+  - {fileID: 2168843738333486339, guid: 9b0f92489d632db40a3df3fc6812481a, type: 3}
+  - {fileID: 8079927310044602539, guid: ac8c93d435f33f8428808663cf774f16, type: 3}
   spawnPoint: {fileID: 346467010}
   spawningItem: 1
   spawnTime: 2
@@ -43013,15 +42993,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.779
+      value: -15.38
       objectReference: {fileID: 0}
     - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.239
+      value: 1.379
       objectReference: {fileID: 0}
     - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.906
+      value: 41.324
       objectReference: {fileID: 0}
     - target: {fileID: 6839193818556462349, guid: bcdf900a095f9204eaa17c0021e2f72d, type: 3}
       propertyPath: m_LocalRotation.w

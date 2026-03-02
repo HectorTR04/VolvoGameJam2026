@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6133802904639074331}
   - component: {fileID: 3116118698471523486}
   - component: {fileID: 7838356265875808085}
+  - component: {fileID: 6730879184453448720}
   m_Layer: 0
   m_Name: Cobalt
   m_TagString: Untagged
@@ -90,6 +91,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   baseData: {fileID: 11400000, guid: 6188b8b184bedc84aad7de7b8b274ad3, type: 2}
+--- !u!114 &6730879184453448720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2168843738333486339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f492107c8c75540bfcdf12239effe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BeltItem
+  item: {fileID: 2168843738333486339}
 --- !u!1 &5509984085940303281
 GameObject:
   m_ObjectHideFlags: 0

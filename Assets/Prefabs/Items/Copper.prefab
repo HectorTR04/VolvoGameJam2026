@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 8619704533945763873}
   - component: {fileID: 2217394942870146776}
   - component: {fileID: 5020233569133904641}
+  - component: {fileID: 4286917295245431356}
   m_Layer: 0
   m_Name: Copper
   m_TagString: Untagged
@@ -271,3 +272,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   baseData: {fileID: 11400000, guid: 46be512e646328c48a51f43e9aff6193, type: 2}
+--- !u!114 &4286917295245431356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5838886028538990134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f492107c8c75540bfcdf12239effe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BeltItem
+  item: {fileID: 5838886028538990134}
