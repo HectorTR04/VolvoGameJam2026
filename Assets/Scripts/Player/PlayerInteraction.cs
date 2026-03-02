@@ -43,7 +43,7 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    private void DropHeldItem()
+    public void DropHeldItem()
     {
 
         m_heldItem.transform.parent = null;

@@ -1,3 +1,4 @@
+using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,7 +19,7 @@ public class CraftingTable : MonoBehaviour, IInteractable
 
     void Start()
     {
-        OnInteract();
+       // OnInteract();
     }
     public void Update()
     {
@@ -53,8 +54,16 @@ public class CraftingTable : MonoBehaviour, IInteractable
             {
                 //add code for physically placing the items on the table
                 Crafting.inputs[i] = PlayerInteraction.GetItem();
-                //PlayerInteraction.GetRidOfItem();
+                PlayerInteraction.GetRidOfItem();
+                //PlayerInteraction.DropHeldItem();
                 PlaceItemUsingColliderBounds(Crafting.inputs[i].gameObject);
+                //foreach(var collider in Crafting.inputs[i].GetComponents<SphereCollider>())
+                //{
+                //    if(collider.radius > 0.006)
+                //    {
+                //        Destroy(collider);
+                //    }
+                //}
 
                 break;
             }

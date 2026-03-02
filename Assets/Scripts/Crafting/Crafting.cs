@@ -11,6 +11,8 @@ public class Crafting : MonoBehaviour
     public Item[] inputs = new Item[2];
     public BaseItem[] baseItemInputs = new BaseItem[2];
 
+    public GameObject instantiatedItem;
+
     [SerializeField] EmissionManager EmissionManager;
     [SerializeField] EnergyManager EnergyManager;
     [SerializeField] PlayerInteraction PlayerInteraction;
@@ -39,13 +41,16 @@ public class Crafting : MonoBehaviour
             if(DoesRecipeExist(baseItemInputs, recipe))
             {
                 Debug.Log("recipe exists lol");
-                Craft(recipe);
                 DestroyInputs();
+                Craft(recipe);
+                PlayerInteraction.PickUpItem(instantiatedItem);
                 return;
             }
         }
 
         DestroyInputs();
+
+
     }
 
     public bool DoesRecipeExist(BaseItem[] inputItems, BaseRecipe recipe)
@@ -87,17 +92,20 @@ public class Crafting : MonoBehaviour
 
         Item outputItem = new Item();
         outputItem.baseData = recipe.outputItem;
+        Debug.Log(outputItem.baseData.itemName);
         if (outputItem.baseData.discovered == false)
         {
             outputItem.baseData.discovered = true;
         }
 
+
+        //move this intocheckcrafting output
         foreach (GameObject prefab in prefabs)
         {
-            if (prefab.GetComponent<Item>() == outputItem)
+            if (prefab.GetComponent<Item>().baseData.itemName == outputItem.baseData.itemName)
             {
-                GameObject instantiatedItem = Instantiate(prefab);
-                PlayerInteraction.PickUpItem(instantiatedItem);
+                instantiatedItem = Instantiate(prefab);
+                return;
             }
         }
        
