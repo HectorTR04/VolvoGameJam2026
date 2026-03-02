@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Cobalt
   energyValue: 10
   energyCostValue: 20
-  emissionValue: 10
+  emissionValue: 2
   sellValue: 15
   discovered: 0

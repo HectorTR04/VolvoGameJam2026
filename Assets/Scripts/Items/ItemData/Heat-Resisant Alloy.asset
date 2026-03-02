@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Heat-Resistant Alloy
   energyValue: 40
   energyCostValue: 70
-  emissionValue: 15
+  emissionValue: 2
   sellValue: 70
   discovered: 0

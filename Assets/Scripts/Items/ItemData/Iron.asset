@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Iron
   energyValue: 10
   energyCostValue: 40
-  emissionValue: 25
+  emissionValue: 5
   sellValue: 10
   discovered: 0

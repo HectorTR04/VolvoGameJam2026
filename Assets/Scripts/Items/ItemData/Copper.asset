@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Copper
   energyValue: 10
   energyCostValue: 15
-  emissionValue: 10
+  emissionValue: 3
   sellValue: 15
   discovered: 0

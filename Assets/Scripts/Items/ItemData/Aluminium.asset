@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Aluminium
   energyValue: 15
   energyCostValue: 20
-  emissionValue: 10
+  emissionValue: 2
   sellValue: 20
   discovered: 0

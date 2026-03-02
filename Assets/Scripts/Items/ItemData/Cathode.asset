@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Cathode
   energyValue: 30
   energyCostValue: 25
-  emissionValue: 15
+  emissionValue: 5
   sellValue: 25
   discovered: 0

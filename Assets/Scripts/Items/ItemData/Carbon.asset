@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Carbon
   energyValue: 20
   energyCostValue: 10
-  emissionValue: 20
+  emissionValue: 10
   sellValue: 10
   discovered: 0

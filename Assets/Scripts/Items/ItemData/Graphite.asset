@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Graphite
   energyValue: 20
   energyCostValue: 20
-  emissionValue: 30
+  emissionValue: 15
   sellValue: 5
   discovered: 0

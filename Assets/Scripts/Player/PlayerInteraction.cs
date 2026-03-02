@@ -43,7 +43,7 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    private void DropHeldItem()
+    public void DropHeldItem()
     {
 
         m_heldItem.transform.parent = null;
@@ -90,6 +90,12 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     public void GetRidOfItem()
+    {
+        Destroy(m_heldItem);
+        m_heldItem = null;
+    }
+
+    public void SetItemAsNull()
     {
         m_heldItem = null;
     }

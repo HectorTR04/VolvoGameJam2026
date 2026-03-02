@@ -11579,10 +11579,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8142925337006631216, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18455,6 +18451,10 @@ PrefabInstance:
       propertyPath: energyManager
       value: 
       objectReference: {fileID: 665030108}
+    - target: {fileID: 2874087303005098282, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
+      propertyPath: drainPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2874087303005098282, guid: 6b63ab4925bd7064eb6f9baaeaca5c9b, type: 3}
       propertyPath: item.Array.size
       value: 9
