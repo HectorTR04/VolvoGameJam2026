@@ -5,6 +5,11 @@ using UnityEngine.InputSystem;
 public class IncineratorScript : MachineBase
 {
     [SerializeField] private ParticleSystem incineratorParticles;
+    IncineratorScript allIncinerators;
+    void Awake()
+    {
+        allIncinerators = FindAnyObjectByType<IncineratorScript>();
+    }
 
     void Update()
     {

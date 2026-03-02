@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5842390761382511032}
   - component: {fileID: 6792845528961405469}
   - component: {fileID: 5513590431106222625}
+  - component: {fileID: 302421224586379242}
   m_Layer: 0
   m_Name: Incenerator
   m_TagString: Untagged
@@ -108,10 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c895c2ad1cc0a42890ecbcf2bcf133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IncineratorScript
-  incineratorParticles: {fileID: 3347535849201998739}
   energyManager: {fileID: 0}
   drainPerSecond: 1
-  energyPerTrash: 10
+  incineratorParticles: {fileID: 3347535849201998739}
 --- !u!65 &6792845528961405469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -160,6 +160,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &302421224586379242
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476708792748142648}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.8, z: 1.4}
+  m_Center: {x: 0, y: 0.9, z: -0.0000007748604}
 --- !u!1001 &1934256784409599999
 PrefabInstance:
   m_ObjectHideFlags: 0
