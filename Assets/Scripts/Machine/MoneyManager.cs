@@ -7,6 +7,7 @@ public class MoneyManager : MonoBehaviour
     {
         CurrentMoney = 0f;
     }
+
     public void IncreaseMoney(float amount)
     {
         CurrentMoney += amount;
