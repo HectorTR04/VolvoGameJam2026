@@ -11,7 +11,7 @@ public class CoilSlot : MonoBehaviour, IInteractable
     [SerializeField] private PlayerInteraction player;
 
     [Header("Battery rules")]
-    [SerializeField] private string batteryItemName = "Aluminium Battery";
+    // [SerializeField] private string batteryItemName = "Aluminium Battery";
     [SerializeField] private int capacity = 4;
 
     [Header("Snap points (optional but recommended)")]
@@ -19,6 +19,11 @@ public class CoilSlot : MonoBehaviour, IInteractable
 
     private readonly List<Item> storedItems = new();
     private readonly List<BatteryItem> storedBatteries = new();
+    [SerializeField] private string[] allowedBatteryNames  = 
+{
+    "Aluminium Battery",
+    "Copper Battery"
+};
 
     private void Awake()
     {
@@ -54,11 +59,11 @@ public class CoilSlot : MonoBehaviour, IInteractable
             return;
         }
 
-        if (held.baseData.itemName != batteryItemName)
-        {
-            Debug.Log($"Not a battery: {held.baseData.itemName}");
-            return;
-        }
+if (!IsAllowedBattery(held.baseData.itemName))
+{
+    Debug.Log($"Not an allowed battery: {held.baseData.itemName}");
+    return;
+}
 
         BatteryItem batteryMarker = held.GetComponent<BatteryItem>();
         if (!batteryMarker)
@@ -107,4 +112,14 @@ public class CoilSlot : MonoBehaviour, IInteractable
         if (index < 0 || index >= snapPoints.Length) return snapPoints[snapPoints.Length - 1];
         return snapPoints[index];
     }
+    private bool IsAllowedBattery(string itemName)
+{
+    if (allowedBatteryNames == null) return false;
+
+    for (int i = 0; i < allowedBatteryNames.Length; i++)
+        if (allowedBatteryNames[i] == itemName)
+            return true;
+
+    return false;
+}
 }
