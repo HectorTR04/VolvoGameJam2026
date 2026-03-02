@@ -57,7 +57,7 @@ public class PlayerInteraction : MonoBehaviour
         m_heldItem = null;
     }
 
-    private void PickUpItem(GameObject detectedItem)
+    public void PickUpItem(GameObject detectedItem)
     {
         m_heldItem = detectedItem;
         m_heldItem.transform.SetParent(gameObject.transform);

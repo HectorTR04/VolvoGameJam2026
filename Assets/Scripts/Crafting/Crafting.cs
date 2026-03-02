@@ -13,6 +13,8 @@ public class Crafting : MonoBehaviour
 
     [SerializeField] EmissionManager EmissionManager;
     [SerializeField] EnergyManager EnergyManager;
+    [SerializeField] PlayerInteraction PlayerInteraction;
+    [SerializeField] GameObject[] prefabs = new GameObject[8];
 
     public void Awake()
     {   
@@ -38,12 +40,12 @@ public class Crafting : MonoBehaviour
             {
                 Debug.Log("recipe exists lol");
                 Craft(recipe);
-            }
-            else
-            {
                 DestroyInputs();
+                return;
             }
         }
+
+        DestroyInputs();
     }
 
     public bool DoesRecipeExist(BaseItem[] inputItems, BaseRecipe recipe)
@@ -82,7 +84,6 @@ public class Crafting : MonoBehaviour
     public virtual void Craft(BaseRecipe recipe)
     {
         SoundManager.PlayAt(SoundType.SFX_CraftingDone, transform.position);
-        DestroyInputs();
 
         Item outputItem = new Item();
         outputItem.baseData = recipe.outputItem;
@@ -91,16 +92,25 @@ public class Crafting : MonoBehaviour
             outputItem.baseData.discovered = true;
         }
 
-        //instantiate prefab with the crafted item
+        foreach (GameObject prefab in prefabs)
+        {
+            if (prefab.GetComponent<Item>() == outputItem)
+            {
+                GameObject instantiatedItem = Instantiate(prefab);
+                PlayerInteraction.PickUpItem(instantiatedItem);
+            }
+        }
+       
 
     }
 
     public void DestroyInputs()
     {
-        for (int i = 0; i < inputs.Length; i++)
+        for (int i = 0; i < 2; i++)
         {
+            Debug.Log(inputs[i].baseData.name);
             //Energy cost is deducted here
-            EmissionManager.IncreaseEmissions(inputs[i].baseData.emissionValue); //increase emissions;
+            //EmissionManager.IncreaseEmissions(inputs[i].baseData.emissionValue); //increase emissions;
             EnergyManager.SpendEnergy(inputs[i].baseData.energyCostValue); //Spend energy
             baseItemInputs[i] = null;
             Destroy(inputs[i].gameObject);
