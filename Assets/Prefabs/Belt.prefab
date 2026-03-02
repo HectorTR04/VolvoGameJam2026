@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3033385469449237682}
   - component: {fileID: 1371886634601471002}
+  - component: {fileID: 2905666529961356924}
+  - component: {fileID: 410473868013441414}
+  - component: {fileID: 422734899949545193}
   m_Layer: 0
   m_Name: Belt
   m_TagString: Untagged
@@ -55,6 +58,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 0.4, z: 1}
   m_Center: {x: 3.2, y: 1.2, z: -0.1}
+--- !u!114 &2905666529961356924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420086138987509680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10dfc7d2edb64e4c8957544151daea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConveyorBelt
+  speed: 100
+  dir: {x: 2, y: 0, z: 0}
+  onBelt: []
+--- !u!114 &410473868013441414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420086138987509680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10dfc7d2edb64e4c8957544151daea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConveyorBelt
+  speed: 100
+  dir: {x: 2, y: 0, z: 0}
+  onBelt: []
+--- !u!114 &422734899949545193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420086138987509680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10dfc7d2edb64e4c8957544151daea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConveyorBelt
+  speed: 100
+  dir: {x: 0, y: 0, z: 1}
+  onBelt: []
 --- !u!1001 &651467491712830622
 PrefabInstance:
   m_ObjectHideFlags: 0
