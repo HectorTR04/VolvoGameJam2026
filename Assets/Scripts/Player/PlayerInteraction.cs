@@ -6,7 +6,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private GameObject m_heldItem;
     private readonly Vector3 m_aboveHeadOffset = new(0, 2f, 0);
-    private readonly float m_interactionRange = 2f;
+    private readonly float m_interactionRange = 5f;
 
     public void Interact()
     {
