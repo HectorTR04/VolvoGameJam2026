@@ -12,16 +12,33 @@ public class EnergyManager : MonoBehaviour
     }
     void Update()
     {
-        if(activeMachines.Count == 0) return;
+        Debug.Log("Energy Level: " + EnergyLevel);
+        if (activeMachines.Count == 0) return;
+
         float totalDrainPerSecond = 0f;
-        for(int i = activeMachines.Count - 1; i >= 0; i--)
+
+        for (int i = activeMachines.Count - 1; i >= 0; i--)
         {
-            if(activeMachines[i] == null)
+            if (activeMachines[i] == null)
             {
                 activeMachines.RemoveAt(i);
                 continue;
             }
+
             totalDrainPerSecond += activeMachines[i].DrainPerSecond;
+        }
+                SpendEnergy(totalDrainPerSecond * Time.deltaTime);
+                        if (EnergyLevel <= 0f)
+        {
+            EnergyLevel = 0f;
+
+            for (int i = activeMachines.Count - 1; i >= 0; i--)
+            {
+                if (activeMachines[i] != null)
+                    activeMachines[i].ForcedOffDueToNoEnergy();
+            }
+
+            activeMachines.Clear();
         }
     }
     public void Register(MachineBase machine)
