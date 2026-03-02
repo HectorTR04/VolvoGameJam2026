@@ -109,7 +109,7 @@ MonoBehaviour:
     spatialBlend: 0
     maxDistance: 0
     rolloffMode: 0
-    loop: 1
+    loop: 0
   - type: 11
     clips:
     - {fileID: 8300000, guid: e2851f9aad5208c4f86b5ceb0f8b092d, type: 3}
