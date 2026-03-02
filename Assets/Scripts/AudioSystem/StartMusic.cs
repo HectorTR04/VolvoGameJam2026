@@ -4,6 +4,6 @@ public class StartMusic : MonoBehaviour
 {
     void Start()
     {
-        SoundManager.Play(SoundType.Music_GameTheme, 1f);
+        SoundManager.PlayMusic(SoundType.Music_GameTheme);
     }
 }
