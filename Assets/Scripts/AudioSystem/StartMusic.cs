@@ -2,8 +2,8 @@ using UnityEngine;
 using Assets.Scripts.AudioSystem;
 public class StartMusic : MonoBehaviour
 {
-    void Awake()
+    void Start()
     {
-        SoundManager.PlayMusic(SoundType.Music_GameTheme);
+        SoundManager.Play(SoundType.Music_GameTheme, 1f);
     }
 }
