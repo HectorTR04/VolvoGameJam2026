@@ -41,14 +41,14 @@ public class Crafting : MonoBehaviour
             if(DoesRecipeExist(baseItemInputs, recipe))
             {
                 Debug.Log("recipe exists lol");
-                DestroyInputs();
                 Craft(recipe);
+                DestroyInputs();
                 PlayerInteraction.PickUpItem(instantiatedItem);
                 return;
             }
         }
 
-        DestroyInputs();
+       // DestroyInputs();
 
 
     }
@@ -104,7 +104,8 @@ public class Crafting : MonoBehaviour
         {
             if (prefab.GetComponent<Item>().baseData.itemName == outputItem.baseData.itemName)
             {
-                instantiatedItem = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+                Vector3 posToSpawn = new Vector3(PlayerInteraction.transform.position.x, PlayerInteraction.transform.position.y + 1, PlayerInteraction.transform.position.z);
+                instantiatedItem = Instantiate(prefab, posToSpawn, Quaternion.identity);
                 return;
             }
         }

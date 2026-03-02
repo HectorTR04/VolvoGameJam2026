@@ -94,4 +94,9 @@ public class PlayerInteraction : MonoBehaviour
         Destroy(m_heldItem);
         m_heldItem = null;
     }
+
+    public void SetItemAsNull()
+    {
+        m_heldItem = null;
+    }
 }
