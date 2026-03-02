@@ -13,7 +13,7 @@ public class Item : MonoBehaviour, IInteractable
 
     void Start()
     {
-        
+        baseData.discovered = false;
     }
 
     void Update()
