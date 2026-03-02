@@ -615,7 +615,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Place two items on the crafting table to craft a new item, recipes you
-    unlock can be found in the left side of the plant. \n\nSell items to bring prosperity
+    unlock can be found in the right side of the plant. \n\nSell items to bring prosperity
     to our plant, but running the machines costs energy!\n\nBurning items for energy
     has an emission cost, so try to be careful with your energy sources, better to
     be sustainable!\n\nIf you can manage to craft batteries you will power the lab
@@ -1565,6 +1565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnergyManager
   maxEnergy: 100
+  batteryBaseRate: 0.75
+  batteryExponent: 1.1
 --- !u!114 &7058723664124926455
 MonoBehaviour:
   m_ObjectHideFlags: 0
