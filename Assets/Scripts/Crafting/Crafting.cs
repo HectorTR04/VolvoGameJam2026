@@ -119,7 +119,7 @@ public class Crafting : MonoBehaviour
         {
             Debug.Log(inputs[i].baseData.name);
             //Energy cost is deducted here
-            EmissionManager.IncreaseEmissions(inputs[i].baseData.emissionValue); //increase emissions;
+            EmissionManager.IncreaseEmissions(inputs[i].baseData.emissionValue / 3); //increase emissions;
             EnergyManager.SpendEnergy(inputs[i].baseData.energyCostValue / 2); //Spend energy
             baseItemInputs[i] = null;
             Destroy(inputs[i].gameObject);
