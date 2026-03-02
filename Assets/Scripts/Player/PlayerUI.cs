@@ -14,7 +14,6 @@ public class PlayerUI : MonoBehaviour
     #region Unity Methods
     private void Start()
     {
-
         m_heldItemText = m_itemTextObj.GetComponent<TextMeshProUGUI>();
         m_energyText = m_energyTextObj.GetComponent<TextMeshProUGUI>();
         m_moneyText = m_moneyTextObj.GetComponent<TextMeshProUGUI>();
