@@ -25568,6 +25568,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22ecd9be43270534a9a6fac869b4aa6f, type: 3}
+--- !u!1001 &1368085137
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 222484566270376087, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_Name
+      value: AluminumBattery
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986737705916275272, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.759962
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986737705916275272, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.024999974
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986737705916275272, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.23957
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986737705916275272, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986737705916275272, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986737705916275272, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986737705916275272, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986737705916275272, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986737705916275272, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986737705916275272, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b449a6ebb95aa3647a9700453497f135, type: 3}
 --- !u!1001 &1370083879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41555,6 +41612,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5492060115665883122, guid: 22ecd9be43270534a9a6fac869b4aa6f, type: 3}
   m_PrefabInstance: {fileID: 1987005294}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2076416117 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9079223992360163655, guid: 29b086551ee81bf4fa5699471c52e42d, type: 3}
+  m_PrefabInstance: {fileID: 6195671399026773207}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2076810458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5492060115665883122, guid: 22ecd9be43270534a9a6fac869b4aa6f, type: 3}
@@ -43069,6 +43131,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4152139082009862113, guid: 29b086551ee81bf4fa5699471c52e42d, type: 3}
+      propertyPath: snapPoint
+      value: 
+      objectReference: {fileID: 2076416117}
+    - target: {fileID: 4152139082009862113, guid: 29b086551ee81bf4fa5699471c52e42d, type: 3}
+      propertyPath: energyManager
+      value: 
+      objectReference: {fileID: 665030108}
     - target: {fileID: 7931766537535693999, guid: 29b086551ee81bf4fa5699471c52e42d, type: 3}
       propertyPath: m_Name
       value: TeslaCoil
@@ -43096,3 +43166,4 @@ SceneRoots:
   - {fileID: 141607182}
   - {fileID: 550250653}
   - {fileID: 6195671399026773207}
+  - {fileID: 1368085137}

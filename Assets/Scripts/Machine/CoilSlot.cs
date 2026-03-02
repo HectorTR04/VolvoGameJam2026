@@ -7,7 +7,7 @@ public class CoilSlot : MonoBehaviour
         [SerializeField] private Transform snapPoint;
     [SerializeField] private EnergyManager energyManager;
 
-    [SerializeField] private string batteryItemName = "Battery"; // match your BaseItem name
+    [SerializeField] private string batteryItemName = "Aluminium Battery"; // match your BaseItem name
 
     private Item currentItem;
 
