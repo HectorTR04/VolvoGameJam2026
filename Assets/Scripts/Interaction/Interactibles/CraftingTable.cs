@@ -14,11 +14,12 @@ public class CraftingTable : MonoBehaviour, IInteractable
 
     public void Update()
     {
-        if(isInteracting)
-        {
-            OnInteract();
-            isInteracting = false; 
-        }
+        //if(isInteracting)
+        //{
+        //    OnInteract();
+        //    isInteracting = false; 
+        //}
+        //Test code don't worry about this
     }
 
     public void OnInteract()
