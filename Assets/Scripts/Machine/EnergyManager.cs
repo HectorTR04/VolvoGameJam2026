@@ -6,6 +6,14 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] private float maxEnergy = 100f;
     public float EnergyLevel { get; private set; }
     private readonly List<MachineBase> activeMachines = new List<MachineBase>();
+
+
+    [SerializeField] private float batteryBaseRate = 0.75f;
+[SerializeField] private float batteryExponent = 1.1f;
+private int batteryCount;
+
+public void RegisterBattery() => batteryCount++;
+public void UnregisterBattery() => batteryCount = Mathf.Max(0, batteryCount - 1);
     void Awake()
     {
         EnergyLevel = maxEnergy; // Initialize energy level to maxEnergy
@@ -14,7 +22,7 @@ public class EnergyManager : MonoBehaviour
     {
         Debug.Log("Energy Level: " + EnergyLevel);
         if (activeMachines.Count == 0) return;
-
+        
         float totalDrainPerSecond = 0f;
 
         for (int i = activeMachines.Count - 1; i >= 0; i--)
@@ -27,6 +35,8 @@ public class EnergyManager : MonoBehaviour
 
             totalDrainPerSecond += activeMachines[i].DrainPerSecond;
         }
+        AddEnergy(BatteryProductionPerSecond() * Time.deltaTime);
+        
                 SpendEnergy(totalDrainPerSecond * Time.deltaTime);
                         if (EnergyLevel <= 0f)
         {
@@ -72,4 +82,9 @@ public class EnergyManager : MonoBehaviour
     {
         EnergyLevel = Mathf.Clamp(EnergyLevel - amount, 0f, maxEnergy);
     }
+    private float BatteryProductionPerSecond()
+{
+    if (batteryCount <= 0) return 0f;
+    return batteryBaseRate * Mathf.Pow(batteryCount, batteryExponent);
+}
 }
