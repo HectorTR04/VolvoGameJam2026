@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3049750680582280894}
   - component: {fileID: 3697248930741064332}
   - component: {fileID: 8524370393148073188}
-  - component: {fileID: -2213161411679456559}
+  - component: {fileID: 5892317701673835121}
   m_Layer: 0
   m_Name: AluminumBattery
   m_TagString: Untagged
@@ -151,15 +151,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   baseData: {fileID: 11400000, guid: dab3e8372a8ba12418f308844770ee0f, type: 2}
---- !u!114 &-2213161411679456559
-MonoBehaviour:
+--- !u!54 &5892317701673835121
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222484566270376087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 977ce987e8ffb68459e6a4b72191ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatteryItem
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
