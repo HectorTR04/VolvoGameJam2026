@@ -986,9 +986,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Place two items on the crafting table to craft a new item, recipes you
-    unlock can be found in the left area. \n\nBurning items for energy has an emission
-    cost, so try to be careful with your energy sources!\n\nIf you can manage to
-    craft batteries you will power the lab sustainably using the power of electricity!"
+    unlock can be found in the left side of the plant. \n\nSell items to bring prosperity
+    to our plant, but running the machines costs energy!\n\nBurning items for energy
+    has an emission cost, so try to be careful with your energy sources, better to
+    be sustainable!\n\nIf you can manage to craft batteries you will power the lab
+    sustainably using the power of green energy sources, like electricity!\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 59c8b2068f19540468de1ecc8c027a56, type: 2}
   m_sharedMaterial: {fileID: 4414144537519135951, guid: 59c8b2068f19540468de1ecc8c027a56, type: 2}
@@ -1015,8 +1017,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1337,15 +1339,15 @@ PrefabInstance:
       objectReference: {fileID: 908711053}
     - target: {fileID: 3073994153557960649, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.015686275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3073994153557960649, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.67058825
+      value: 0.73314035
       objectReference: {fileID: 0}
     - target: {fileID: 3073994153557960649, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.8078432
+      value: 0.8867924
       objectReference: {fileID: 0}
     - target: {fileID: 5421836383362438900, guid: b218d7fb163d0e0428520735c96f1f37, type: 3}
       propertyPath: m_fontColor.b
