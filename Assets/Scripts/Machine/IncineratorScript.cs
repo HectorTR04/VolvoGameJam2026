@@ -5,20 +5,11 @@ using UnityEngine.InputSystem;
 public class IncineratorScript : MachineBase
 {
     [SerializeField] private ParticleSystem incineratorParticles;
-
-    void Update()
+    IncineratorScript allIncinerators;
+    protected override void Awake()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            if (isOn)
-            {
-                TurnOff();
-            }
-            else
-            {
-                TurnOn();
-            }
-        }
+        base.Awake();
+        allIncinerators = FindAnyObjectByType<IncineratorScript>();
     }
     public void OnTriggerEnter(Collider other)
     {

@@ -14,7 +14,6 @@ public class PlayerUI : MonoBehaviour
     #region Unity Methods
     private void Start()
     {
-
         m_heldItemText = m_itemTextObj.GetComponent<TextMeshProUGUI>();
         m_energyText = m_energyTextObj.GetComponent<TextMeshProUGUI>();
         m_moneyText = m_moneyTextObj.GetComponent<TextMeshProUGUI>();
@@ -23,8 +22,8 @@ public class PlayerUI : MonoBehaviour
 
     public void UpdateUI(Item heldItemData, float energyData, float moneyData)
     {
+        m_moneyText.text = moneyData.ToString() + "$";
         m_energyText.text = energyData.ToString("F1");
-        m_moneyText.text = moneyData.ToString();
         if (heldItemData == null) { m_heldItemText.text = string.Empty; return; }
         m_heldItemText.text = heldItemData.baseData.name;
     }
