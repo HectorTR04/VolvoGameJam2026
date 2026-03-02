@@ -45,9 +45,14 @@ public class PlayerInteraction : MonoBehaviour
 
     private void DropHeldItem()
     {
+
         m_heldItem.transform.parent = null;
         m_heldItem.GetComponent<Collider>().enabled = true;
         m_heldItem.transform.position = transform.position + transform.forward * 1.5f;
+        m_heldItem.GetComponent<Rigidbody>().isKinematic = false;
+
+
+
         Debug.Log("Item: " + m_heldItem + "dropped.");
         m_heldItem = null;
     }
@@ -58,18 +63,24 @@ public class PlayerInteraction : MonoBehaviour
         m_heldItem.transform.SetParent(gameObject.transform);
         m_heldItem.transform.position = gameObject.transform.position + m_aboveHeadOffset;
         m_heldItem.GetComponent<Collider>().enabled = false;
+        m_heldItem.GetComponent<Rigidbody>().isKinematic = true;
+
+
     }
 
     private void SwapHeldItem(GameObject detectedItem)
     {
         m_heldItem.transform.parent = null;
         m_heldItem.GetComponent<Collider>().enabled = true;
+        m_heldItem.GetComponent<Rigidbody>().isKinematic = false;
         m_heldItem.transform.position = transform.position + transform.forward * 1.5f;
         Debug.Log("Swapped Item: " + m_heldItem + "for: " + detectedItem);
         m_heldItem = detectedItem;
         m_heldItem.transform.SetParent(gameObject.transform);
         m_heldItem.transform.position = gameObject.transform.position + m_aboveHeadOffset;
         m_heldItem.GetComponent<Collider>().enabled = false;
+        m_heldItem.GetComponent<Rigidbody>().isKinematic = true;
+
     }
 
     public Item GetItem()

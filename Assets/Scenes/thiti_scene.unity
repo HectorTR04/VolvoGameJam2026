@@ -3830,7 +3830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConveyorBelt
   speed: 100
-  dir: {x: 1, y: 0, z: 0}
+  dir: {x: 2, y: 0, z: 0}
   onBelt: []
 --- !u!1001 &164364537
 PrefabInstance:
@@ -17895,7 +17895,7 @@ MonoBehaviour:
   - {fileID: 8079927310044602539, guid: ac8c93d435f33f8428808663cf774f16, type: 3}
   spawnPoint: {fileID: 346467010}
   spawningItem: 1
-  spawnTime: 2
+  spawnTime: 3
   poolSize: 50
 --- !u!4 &878854158 stripped
 Transform:
@@ -31777,7 +31777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConveyorBelt
   speed: 100
-  dir: {x: 1, y: 0, z: 0}
+  dir: {x: 2, y: 0, z: 0}
   onBelt: []
 --- !u!4 &1686502241 stripped
 Transform:
