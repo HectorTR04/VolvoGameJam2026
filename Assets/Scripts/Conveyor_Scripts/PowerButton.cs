@@ -6,21 +6,42 @@ public class PowerButton : MonoBehaviour
     [SerializeField] private MachineBase targetMachine;
     [SerializeField] private string playerTag = "Player";
 
+    private Color onColor = Color.green;
+    public Color offColor = Color.red;
+
     private bool playerInRange;
 
+    private void Awake()
+    {
+        Renderer renderer = GetComponent<Renderer>();
+        renderer.material.color = offColor;
+    }
     private void Reset()
     {
         // Helpful defaults when adding the component
         var col = GetComponent<Collider>();
         col.isTrigger = true;
     }
-        private void Update()
+    
+    private void Update()
     {
         if (!playerInRange) return;
 
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
             Press();
+
+            if (targetMachine.IsOn)
+            {
+                Renderer renderer = GetComponent<Renderer>();
+                renderer.material.color = onColor;
+            }
+            else
+            {
+                Renderer renderer = GetComponent<Renderer>();
+                renderer.material.color = offColor;
+            }
+
         }
     }
 
