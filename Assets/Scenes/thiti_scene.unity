@@ -13538,14 +13538,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 296894135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0f92ea722ad2e84da30a56558b7ab1b, type: 3}
+  m_Script: {fileID: 11500000, guid: 43f429f10e602734a91e1cfe22752ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPickUpDrop
-  playerCamTransform: {fileID: 2079694191}
-  pickUpLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  pickUpDist: 100
+  m_playerCam: {fileID: 2079694195}
 --- !u!1001 &665056635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17912,14 +17908,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10785608b5b74848963aeb3a9d6badb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  energyManager: {fileID: 903555107}
+  drainPerSecond: 1
   item:
   - {fileID: 4894444789181684720, guid: c00bdcc40a71e214fa6cc2b7bb22505e, type: 3}
   - {fileID: 8973857537430353459, guid: 60a5ca13da63cbc49b5a5715de065965, type: 3}
   spawnPoint: {fileID: 346467010}
   spawningItem: 1
-  isOn: 1
-  currentEnergy: 0
-  maxEnergy: 0
   spawnTime: 2
   poolSize: 50
 --- !u!4 &878854158 stripped
