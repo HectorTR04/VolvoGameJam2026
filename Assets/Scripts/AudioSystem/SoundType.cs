@@ -11,6 +11,14 @@ namespace Assets.Scripts.AudioSystem
 
         SFX_ConveyorbeltOn,
         SFX_CraftingDone,
+        SFX_SellSound1,
+        SFX_SellSound2,
+        SFX_Bloop,
+        SFX_Burnsound,
+        Music_GameTheme,
+        SFX_IncineratorOn,
+        SFX_SpawnerSound
+
 
     }
 }

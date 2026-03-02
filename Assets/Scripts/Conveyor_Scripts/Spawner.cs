@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.AudioSystem;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -74,29 +75,31 @@ if (item == null || item.Length == 0) Debug.LogError("Spawner: item[] not assign
 
     private void SpawnFromPool()
     {
-    GameObject itemToSpawn = itemPool[currentIndex];
+        GameObject itemToSpawn = itemPool[currentIndex];
 
-    itemToSpawn.transform.position = spawnPoint.position;
-    itemToSpawn.transform.rotation = spawnPoint.rotation;
-    itemToSpawn.SetActive(true);
+        itemToSpawn.transform.position = spawnPoint.position;
+        itemToSpawn.transform.rotation = spawnPoint.rotation;
+        itemToSpawn.SetActive(true);
 
-    Debug.Log($"Spawned {itemToSpawn.name} at {spawnPoint.position}");
+        Debug.Log($"Spawned {itemToSpawn.name} at {spawnPoint.position}");
+        SoundManager.PlayAt(SoundType.SFX_Bloop, transform.position);
 
-    Rigidbody rb = itemToSpawn.GetComponent<Rigidbody>();
-    if (rb != null)
-    {
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.AddForce(spawnPoint.forward * 5f, ForceMode.Impulse);
-    }
+        Rigidbody rb = itemToSpawn.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.AddForce(spawnPoint.forward * 5f, ForceMode.Impulse);
+        }
 
-    currentIndex = (currentIndex + 1) % itemPool.Count;
+        currentIndex = (currentIndex + 1) % itemPool.Count;
     }
     protected override void OnTurnedOn()
     {
         if (spawnRoutine == null)
         {
             spawnRoutine = StartCoroutine(SpawningLoop());
+            SoundManager.PlayAt(SoundType.SFX_SpawnerSound, transform.position);
         }
     }
     protected override void OnTurnedOff()
@@ -105,6 +108,7 @@ if (item == null || item.Length == 0) Debug.LogError("Spawner: item[] not assign
         {
             StopCoroutine(spawnRoutine);
             spawnRoutine = null;
+            SoundManager.StopSfx(SoundType.SFX_SpawnerSound);
         }
 
     }

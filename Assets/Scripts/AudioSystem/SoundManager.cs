@@ -396,5 +396,120 @@ namespace Assets.Scripts.AudioSystem
         }
 
         #endregion
+#region Internal Stop SFX
+
+private void StopSfxInternal(SoundType type, bool stopAllInstances)
+{
+    var entry = soundDatabase != null ? soundDatabase.Get(type) : null;
+    if (entry == null)
+    {
+        Debug.LogWarning($"[SoundManager] No SoundEntry found for {type} (StopSfx)");
+        return;
+    }
+
+    // Stop by matching any clip in the entry (since entry can randomize clips)
+    var clips = entry.clips; // assumes your SoundEntry has a public/serialized AudioClip[] clips
+    if (clips == null || clips.Length == 0)
+    {
+        Debug.LogWarning($"[SoundManager] SoundEntry {type} has no clips to match (StopSfx).");
+        return;
+    }
+
+    int stopped = 0;
+
+    foreach (var src in _sfxSources)
+    {
+        if (src == null || !src.isPlaying || src.clip == null) 
+            continue;
+
+        // If the source is playing one of this entry's clips, stop it
+        if (System.Array.IndexOf(clips, src.clip) >= 0)
+        {
+            StopAndResetSfxSource(src);
+            stopped++;
+
+            if (!stopAllInstances)
+                break;
+        }
+    }
+
+    // Optional debug
+    // Debug.Log($"[SoundManager] StopSfx({type}) stopped {stopped} source(s).");
+}
+
+private void StopSourceInternal(AudioSource source)
+{
+    if (source == null) return;
+
+    // Only manage sources that belong to our pool (or UI/music if you want)
+    if (_sfxSources.Contains(source))
+    {
+        StopAndResetSfxSource(source);
+    }
+    else
+    {
+        // If someone passes an external AudioSource, just stop it safely
+        source.Stop();
+    }
+}
+
+private void StopAllSfxInternal()
+{
+    foreach (var src in _sfxSources)
+    {
+        if (src == null) continue;
+        if (src.isPlaying)
+            StopAndResetSfxSource(src);
+    }
+}
+
+/// <summary>
+/// Stops playback and resets routing/parenting so pooled sources don't stay attached to old targets.
+/// </summary>
+private void StopAndResetSfxSource(AudioSource source)
+{
+    source.Stop();
+    source.clip = null;
+    source.loop = false;
+    source.spatialBlend = 0f;
+    source.outputAudioMixerGroup = defaultSfxGroup;
+
+    // Detach back under SoundManager so it doesn't remain parented to the old object
+    source.transform.SetParent(transform, worldPositionStays: false);
+}
+
+#endregion
+        #region Stop SFX API (static)
+
+/// <summary>
+/// Stops SFX currently playing with the given SoundType.
+/// If stopAllInstances = true, stops every source playing that clip/type.
+/// </summary>
+public static void StopSfx(SoundType type, bool stopAllInstances = true)
+{
+    if (Instance == null) return;
+    Instance.StopSfxInternal(type, stopAllInstances);
+}
+
+/// <summary>
+/// Stops a specific AudioSource returned by PlayAttached / Play / PlayAt.
+/// Useful for looping sounds.
+/// </summary>
+public static void Stop(AudioSource source)
+{
+    if (Instance == null || source == null) return;
+    Instance.StopSourceInternal(source);
+}
+
+/// <summary>
+/// Stops all SFX currently playing (does not affect music).
+/// </summary>
+public static void StopAllSfx()
+{
+    if (Instance == null) return;
+    Instance.StopAllSfxInternal();
+}
+
+#endregion
     }
 }

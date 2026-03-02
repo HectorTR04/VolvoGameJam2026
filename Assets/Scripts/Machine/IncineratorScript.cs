@@ -1,4 +1,5 @@
 using System;
+using Assets.Scripts.AudioSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,6 +23,7 @@ public class IncineratorScript : MachineBase
             Item tempItem = other.GetComponent<Item>();
             energyManager.AddEnergy(tempItem.baseData.energyValue); //Increase energy by baseItem's energy value
             Destroy(other.gameObject);
+            SoundManager.Play(SoundType.SFX_Burnsound);
             emissionManager.IncreaseEmissions(other.GetComponent<Item>().baseData.emissionValue); //Increase emissions by baseItem's emission value
         }
     }
@@ -31,10 +33,12 @@ public class IncineratorScript : MachineBase
         {
             incineratorParticles.Play();
             energyManager.SpendEnergy(1f);
+            SoundManager.PlayAt(SoundType.SFX_IncineratorOn, transform.position);
         }
     }
     protected override void OnTurnedOff()
     {
         if(incineratorParticles) incineratorParticles.Stop();
+        SoundManager.StopSfx(SoundType.SFX_IncineratorOn);
     }
 }
