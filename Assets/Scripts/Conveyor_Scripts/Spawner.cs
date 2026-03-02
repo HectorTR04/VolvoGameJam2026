@@ -30,12 +30,6 @@ public class Spawner : MachineBase
             if (spawnPoint == null) Debug.LogError("Spawner: spawnPoint not assigned", this);
 if (item == null || item.Length == 0) Debug.LogError("Spawner: item[] not assigned", this);
     }
-    private void Start()
-    {
-            StartCoroutine(SpawningLoop());
-            // TurnOn();
-    }
-
     private void CreateItemPool()
     {
         itemPool = new List<GameObject>();
