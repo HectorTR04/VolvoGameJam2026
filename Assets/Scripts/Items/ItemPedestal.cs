@@ -1,17 +1,22 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ItemPedestal : MonoBehaviour
+public class ItemPedestal : MonoBehaviour, IInteractable
 {
     [SerializeField] BaseItem storedItem;
     [SerializeField] BaseRecipe recipe;
     [SerializeField] GameObject itemObject;
+    [SerializeField] GameObject textObject;
     public bool active;
+
+    private TextMeshProUGUI recipeText;
+
 
     private void Start()
     {
-        itemObject = GetComponentInChildren<Item>().gameObject;
         itemObject.SetActive(false);
+        recipeText = textObject.GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
@@ -29,4 +34,8 @@ public class ItemPedestal : MonoBehaviour
         }
     }
 
+    public void OnInteract()
+    {
+        recipeText.text = $"{storedItem.name}: \n {recipe.recipe[0].name} + {recipe.recipe[1].name}";
+    }
 }
