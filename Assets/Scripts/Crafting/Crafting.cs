@@ -86,6 +86,10 @@ public class Crafting : MonoBehaviour
 
         Item outputItem = new Item();
         outputItem.baseData = recipe.outputItem;
+        if (outputItem.baseData.discovered == false)
+        {
+            outputItem.baseData.discovered = true;
+        }
 
         //instantiate prefab with the crafted item
 
